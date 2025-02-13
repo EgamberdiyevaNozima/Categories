@@ -1,50 +1,61 @@
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class WelcomePage extends StatelessWidget {
-  const WelcomePage({super.key});
+import '../../../core/colors.dart';
+import '../managers/onboarding_view_model.dart';
+
+class WelcomePages extends StatelessWidget {
+  final OnboardingViewModel vm;
+
+  const WelcomePages({super.key, required this.vm});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.brown[900],
-      
-      appBar: AppBar(
-        leading: Image.asset("assets/icons/back-arrow.svg"),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      appBar: AppBar(backgroundColor: AppColors.beigeColor,),
+      backgroundColor: AppColors.beigeColor,
+      bottomNavigationBar: Center(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Row(
-              children: [
-                Image.asset("assets/icons/drink.png"),
-              ],
-            )
-            // const SizedBox(height: 40),
-            // const Text(
-            //   'Welcome!',
-            //   style: TextStyle(fontSize: 28, color: Colors.white),
-            // ),
-            // const SizedBox(height: 10),
-            // const Text(
-            //   'Find the best recipes and improve your skills!',
-            //   textAlign: TextAlign.center,
-            //   style: TextStyle(fontSize: 16, color: Colors.white70),
-            // ),
-            // const SizedBox(height: 20),
-            // const Expanded(child: ImageGrid()),
-            // CustomButton(
-            //   text: "I'm New",
-            //   onPressed: () {},
-            // ),
-            // const SizedBox(height: 10),
-            // CustomButton(
-            //   text: "I've Been Here",
-            //   onPressed: () {},
-            // ),
-            // const SizedBox(height: 30),
+            GestureDetector(
+              onTap: () {
+                // Navigate to HomePage
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage()),
+                );
+              },
+              child: Image.asset(
+                'assets/icons/img_1.png',  // PNG fayl manzili
+                width: 500,  // Rasmning kengligi
+                height: 900,  // Rasmning bo'yi
+                fit: BoxFit.cover,  // Rasmni moslashtirish
+              ),
+            ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
+// import 'package:flutter/material.dart';
+//
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Home Page'),
+      ),
+      body: Center(
+        child: Text(
+          'Welcome to the Home Page!',
+          style: TextStyle(fontSize: 24),
         ),
       ),
     );
