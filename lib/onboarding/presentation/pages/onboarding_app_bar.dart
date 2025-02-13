@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:profile/core/colors.dart';
-import 'package:profile/core/sizes.dart';
-import 'package:profile/onboarding/presentation/managers/onboarding_view_model.dart';
-import 'package:profile/profile/presentation/widgets/recipe_elevated_button.dart';
+import '../../../core/colors.dart';
+import '../../../core/sizes.dart';
+import '../../../profile/presentation/widgets/recipe_elevated_button.dart';
+import '../managers/onboarding_view_model.dart';
 
+// Onboarding AppBar
 class OnboardingAppBar extends StatelessWidget implements PreferredSizeWidget {
   const OnboardingAppBar({
     super.key,
@@ -13,7 +14,6 @@ class OnboardingAppBar extends StatelessWidget implements PreferredSizeWidget {
   });
 
   final int index;
-
   @override
   Size get preferredSize => const Size(double.infinity, 156);
   final OnboardingViewModel vm;
