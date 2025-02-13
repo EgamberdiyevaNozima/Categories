@@ -1,7 +1,5 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../../../core/colors.dart';
 import '../managers/onboarding_view_model.dart';
 
@@ -28,10 +26,10 @@ class WelcomePages extends StatelessWidget {
                 );
               },
               child: Image.asset(
-                'assets/icons/img_1.png',  // PNG fayl manzili
-                width: 500,  // Rasmning kengligi
-                height: 900,  // Rasmning bo'yi
-                fit: BoxFit.cover,  // Rasmni moslashtirish
+                'assets/icons/img_1.png',
+                width: 500,
+                height: 900,
+                fit: BoxFit.cover,
               ),
             ),
           ],
@@ -43,8 +41,21 @@ class WelcomePages extends StatelessWidget {
 
 
 
-// import 'package:flutter/material.dart';
-//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

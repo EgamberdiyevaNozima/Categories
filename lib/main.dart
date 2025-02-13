@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'categories/data/repositories/categories_repository.dart';
+import 'categories/presentation/pages/categories_view.dart';
+import 'categories/presentation/pages/categories_view_model.dart';
 import 'core/client.dart';
 import 'core/sizes.dart';
 import 'onboarding/data/repositories/onboarding_repositories.dart';
@@ -17,9 +20,9 @@ class ProfileApp extends StatelessWidget {
   Widget build(BuildContext context) {
     AppSizes.init(context);
     return MaterialApp(
-      home: OnboardingView(
-        vm: OnboardingViewModel(
-          repo: OnboardingRepository(
+      home: CategoriesView(
+        viewModel: CategoriesViewModel(
+          repo: CategoriesRepository(
             client: ApiClient(),
           ),
         ),
