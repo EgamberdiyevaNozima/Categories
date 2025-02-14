@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 
 class ApiClient {
 
-  final Dio dio = Dio(BaseOptions(baseUrl: "http://10.10.2.235:8888/api/v1"));
+  final Dio dio = Dio(BaseOptions(baseUrl: "http://192.168.37.64:8888/api/v1"));
 
   Future<String> login(String login, String password) async {
     var response = await dio.post(
