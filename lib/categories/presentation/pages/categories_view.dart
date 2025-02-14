@@ -16,7 +16,7 @@ class CategoriesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1C0F0D),
+      // backgroundColor: const Color(0xFF1C0F0D),
       extendBody: true,
       appBar: AppBar(leadingWidth: 50,
         leading: Padding(
@@ -34,9 +34,9 @@ class CategoriesView extends StatelessWidget {
         ),
         title: const Text(
           "Categories",
-          style: TextStyle(
-            color: Color(0xFFFD5D69),
-          ),
+          // style: TextStyle(
+          //   color: Color(0xFFFD5D69),
+          // ),
         ),
         actions: const [
           AppBarActionItem(
@@ -55,7 +55,8 @@ class CategoriesView extends StatelessWidget {
           )
         ],
         centerTitle: true,
-        backgroundColor: const Color(0xFF1C0F0D),),
+        // backgroundColor: const Color(0xFF1C0F0D),
+      ),
       body: CategoriesPageBody(viewModel: viewModel),
       bottomNavigationBar: Align(
         alignment: Alignment.bottomCenter,
@@ -63,7 +64,7 @@ class CategoriesView extends StatelessWidget {
           width: 281,
           height: 56,
           decoration: BoxDecoration(
-            color: const Color(0xFFFD5D69),
+            // color: const Color(0xFFFD5D69),
             borderRadius: BorderRadius.circular(30),
           ),
           child: Row(
@@ -154,9 +155,6 @@ class AppBarActionItem extends StatelessWidget {
     required this.width,
     required this.height,
   });
-
-
-
   final String image;
   final double width, height;
 

@@ -1,27 +1,43 @@
 import 'package:flutter/material.dart';
-import 'package:profile/categories/data/repositories/categories_repository.dart';
-import 'package:profile/categories/presentation/pages/categories_view.dart';
-import 'package:profile/categories/presentation/pages/categories_view_model.dart';
-import 'package:profile/core/client.dart';
-import 'package:profile/core/sizes.dart';
-import 'package:profile/onboarding/data/repositories/onboarding_repositories.dart';
-import 'package:profile/onboarding/presentation/managers/onboarding_view_model.dart';
-import 'package:profile/onboarding/presentation/pages/onboarding_view.dart';
+import 'categories/data/repositories/categories_repository.dart';
+import 'categories/presentation/pages/categories_view.dart';
+import 'categories/presentation/pages/categories_view_model.dart';
+import 'core/client.dart';
+import 'core/colors.dart';
+import 'core/sizes.dart';
+import 'onboarding/data/repositories/onboarding_repositories.dart';
+import 'onboarding/presentation/managers/onboarding_view_model.dart';
+import 'onboarding/presentation/pages/onboarding_view.dart';
 
 void main() {
   runApp(ProfileApp());
 }
 
 class ProfileApp extends StatelessWidget {
-  const ProfileApp({super.key});
+  ProfileApp({super.key});
+
+  final darkTheme=ThemeData(
+    colorScheme: ColorScheme(
+        brightness: Brightness.dark,
+        primary: AppColors.redPinkMain,
+        onPrimary: Colors.white,
+        secondary: AppColors.pink,
+        onSecondary: AppColors.pinkSub,
+        error: Colors.red,
+        onError: Colors.white,
+        surface: AppColors.beigeColor,
+        onSurface: AppColors.redPinkMain
+    ),
+  );
 
   @override
   Widget build(BuildContext context) {
     AppSizes.init(context);
     return MaterialApp(
+      theme: darkTheme,
       home: CategoriesView(
         viewModel: CategoriesViewModel(
-          repo:CategoriesRepository(
+          repo: CategoriesRepository(
             client: ApiClient(),
           ),
         ),
