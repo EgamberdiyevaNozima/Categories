@@ -8,7 +8,7 @@ class RecipePasswordFormField extends StatelessWidget {
   const RecipePasswordFormField({
     super.key,
     required this.controller,
-    required this.title,
+    required this.title, required TextStyle hintStyle, required String hintText,
   });
 
   final TextEditingController controller;
