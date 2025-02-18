@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:recipe_app_project1/auth/data/repositories/AuthRepository.dart';
+import 'package:recipe_app_project1/auth/presentation/pages/login_view.dart';
 import 'package:recipe_app_project1/core/colors.dart';
 
+import 'auth/presentation/manager/login_view_model.dart';
 import 'categories/data/repositories/categories_repository.dart';
 import 'categories/presentation/pages/categories_view.dart';
 import 'categories/presentation/pages/categories_view_model.dart';
@@ -36,9 +39,9 @@ class ProfileApp extends StatelessWidget {
     AppSizes.init(context);
     return MaterialApp(
       theme: darkTheme,
-      home: CategoriesView(
-        viewModel: CategoriesViewModel(
-          repo: CategoriesRepository(
+      home: LoginView(
+        vm: LoginViewModel(
+          repo: AuthRepository(
             client: ApiClient(),
           ),
         ),
