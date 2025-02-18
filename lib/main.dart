@@ -1,43 +1,42 @@
 import 'package:flutter/material.dart';
-import 'categories/data/repositories/categories_repository.dart';
-import 'categories/presentation/pages/categories_view.dart';
-import 'categories/presentation/pages/categories_view_model.dart';
-import 'core/client.dart';
-import 'core/colors.dart';
-import 'core/sizes.dart';
-import 'onboarding/data/repositories/onboarding_repositories.dart';
-import 'onboarding/presentation/managers/onboarding_view_model.dart';
-import 'onboarding/presentation/pages/onboarding_view.dart';
+import 'package:profile/auth/presentation/manager/login_view_model.dart';
+import 'package:profile/auth/presentation/pages/login_view.dart';
+import 'package:profile/core/client.dart';
+import 'package:profile/core/colors.dart';
+import 'package:profile/core/sizes.dart';
+
+import 'auth/data/repositories/auth_repository.dart';
 
 void main() {
   runApp(ProfileApp());
 }
 
 class ProfileApp extends StatelessWidget {
-  ProfileApp({super.key});
-
-  final darkTheme=ThemeData(
-    colorScheme: ColorScheme(
-        brightness: Brightness.dark,
-        primary: AppColors.redPinkMain,
-        onPrimary: Colors.white,
-        secondary: AppColors.pink,
-        onSecondary: AppColors.pinkSub,
-        error: Colors.red,
-        onError: Colors.white,
-        surface: AppColors.beigeColor,
-        onSurface: AppColors.redPinkMain
-    ),
-  );
+  const ProfileApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     AppSizes.init(context);
     return MaterialApp(
-      theme: darkTheme,
-      home: CategoriesView(
-        viewModel: CategoriesViewModel(
-          repo: CategoriesRepository(
+      themeMode: ThemeMode.dark,
+      darkTheme: ThemeData(
+        fontFamily: "Poppins",
+        appBarTheme: AppBarTheme(
+          titleTextStyle: TextStyle(
+            color: AppColors.redPinkMain,
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: AppColors.redPinkMain,
+          surface: AppColors.beigeColor,
+          onSurface: Colors.white,
+        ),
+      ),
+      home: LoginView(
+        vm: LoginViewModel(
+          repo: AuthRepository(
             client: ApiClient(),
           ),
         ),
