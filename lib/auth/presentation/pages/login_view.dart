@@ -35,7 +35,7 @@ class LoginView extends StatelessWidget {
                 spacing: 10,
                 children: [
                   RecipeTextFormField(
-                    title: "Login",
+                    title: "Email",
                     hintText: "example@gmail.com",
                     validator: (value) => null,
                     controller: vm.loginController,
@@ -63,7 +63,6 @@ class LoginView extends StatelessWidget {
               ),
             SizedBox(height: 90),
             Padding(
-
               padding: const EdgeInsets.symmetric(horizontal: 100),
               child: RecipeElevatedButton(
                 text: "Login",
