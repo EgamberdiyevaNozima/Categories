@@ -11,12 +11,14 @@ class RecipePasswordFormField extends StatelessWidget {
     required this.title,
     required this.hintText,
     required this.hintStyle,
+
   });
 
   final TextEditingController controller;
   final String title;
   final String hintText;
   final TextStyle hintStyle;
+  
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -42,7 +44,7 @@ class RecipePasswordFormField extends StatelessWidget {
             ),
             decoration: InputDecoration(
               suffix: SvgPicture.asset(
-                "assets/icons/password.svg",
+                "assets/icons/eye.svg",
                 width: 25,
                 height: 25,
                 alignment: Alignment.center,

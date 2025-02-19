@@ -22,7 +22,14 @@ class RegisterView extends StatelessWidget {
       builder: (context, child) => Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text("Sign up"),
+          title: Text(
+            "Sign up",
+            style: TextStyle(
+                color: AppColors.redPinkMain,
+                fontSize: 20,
+                fontFamily: "Poppins",
+                fontWeight: FontWeight.w600),
+          ),
         ),
         body: ListView(
           padding: EdgeInsets.only(top: 30),
@@ -56,7 +63,7 @@ class RegisterView extends StatelessWidget {
                   ),
                   RecipePasswordFormField(
                     title: "Mobile Number",
-                    hintText: "+ 123 456 789",
+                    hintText: "+ 123456789",
                     hintStyle: TextStyle(
                       letterSpacing: 5,
                       color: AppColors.beigeColor.withValues(alpha: 0.45),
@@ -67,7 +74,7 @@ class RegisterView extends StatelessWidget {
                   ),
                   RecipePasswordFormField(
                     title: "Date of birth",
-                    hintText: "DD / MM /YYY",
+                    hintText: "DD/MM/YYY",
                     hintStyle: TextStyle(
                       letterSpacing: 5,
                       color: AppColors.beigeColor.withValues(alpha: 0.45),
@@ -134,15 +141,24 @@ class RegisterView extends StatelessWidget {
                                 Center(
                                   child: Text(
                                     "Sign Up",
-                                    style: TextStyle(color: Colors.black, fontSize:20,fontFamily:"Poppins",fontWeight: FontWeight.w600),
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20,
+                                        fontFamily: "Poppins",
+                                        fontWeight: FontWeight.w600),
                                   ),
                                 ),
                                 Center(
                                   child: Text(
                                     "Succesful!",
-                                    style: TextStyle(color: Colors.black, fontSize:20,fontFamily:"Poppins",fontWeight: FontWeight.w600),
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20,
+                                        fontFamily: "Poppins",
+                                        fontWeight: FontWeight.w600),
                                   ),
-                                ),SizedBox(height: 5),
+                                ),
+                                SizedBox(height: 5),
                               ],
                             ),
                           ),
@@ -153,8 +169,8 @@ class RegisterView extends StatelessWidget {
                               children: [
                                 Center(
                                   child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(50.0),
-                                      child:Stack(
+                                      borderRadius: BorderRadius.circular(50.0),
+                                      child: Stack(
                                         alignment: Alignment.center,
                                         children: [
                                           Container(
@@ -169,29 +185,45 @@ class RegisterView extends StatelessWidget {
                                             color: Colors.red,
                                           ),
                                         ],
-                                      )
-                                  ),
+                                      )),
                                 ),
-                                SizedBox(height:10,),
+                                SizedBox(
+                                  height: 10,
+                                ),
                                 Text(
                                   "Lorem ipsum dolor sit amet ",
-                                  style: TextStyle(color: Colors.black,fontSize: 13,fontFamily:"Poppins",fontWeight: FontWeight.w400),
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 13,
+                                      fontFamily: "Poppins",
+                                      fontWeight: FontWeight.w400),
                                 ),
                                 Text(
                                   "pretium cras id dui",
-                                  style: TextStyle(color: Colors.black,fontSize: 13,fontFamily:"Poppins",fontWeight: FontWeight.w400),
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 13,
+                                      fontFamily: "Poppins",
+                                      fontWeight: FontWeight.w400),
                                 ),
                                 Text(
                                   "pellentesque ornare.",
-                                  style: TextStyle(color: Colors.black,fontSize: 13,fontFamily:"Poppins",fontWeight: FontWeight.w400),
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 13,
+                                      fontFamily: "Poppins",
+                                      fontWeight: FontWeight.w400),
                                 ),
                                 Text(
                                   "Quisque malesuada.",
-                                  style: TextStyle(color: Colors.black,fontSize: 13,fontFamily:"Poppins",fontWeight: FontWeight.w400),
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 13,
+                                      fontFamily: "Poppins",
+                                      fontWeight: FontWeight.w400),
                                 )
                               ],
                             ),
-
                           ],
                         ),
                       );

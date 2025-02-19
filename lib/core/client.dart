@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:recipe_app_project1/auth/data/models/user_model.dart';
+import 'package:recipe_app_project1/core/secure_storage.dart';
+import 'package:dio/dio.dart';
 
 class ApiClient {
 
@@ -18,6 +20,8 @@ class ApiClient {
       throw Exception("User not found");
     }
   }
+
+
 
   Future<String> register(UserModel user) async {
     var response = await dio.post(
@@ -111,5 +115,8 @@ class ApiClient {
     return data;
   }
 }
+
+
+
 
 
