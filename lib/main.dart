@@ -5,7 +5,8 @@ import 'package:profile/core/client.dart';
 import 'package:profile/core/colors.dart';
 import 'package:profile/core/sizes.dart';
 
-import 'auth/data/repositories/auth_repository.dart';
+import 'auth/data/repositories/AuthRepository.dart';
+
 
 void main() {
   runApp(ProfileApp());
@@ -44,3 +45,5 @@ class ProfileApp extends StatelessWidget {
     );
   }
 }
+
+

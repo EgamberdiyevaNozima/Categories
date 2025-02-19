@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:recipe_app_project1/auth/presentation/manager/register_view_model.dart';
-import 'package:recipe_app_project1/auth/presentation/pages/register_view.dart';
+import 'package:profile/auth/presentation/pages/register_view.dart';
 import '../../../core/client.dart';
 import '../../../core/colors.dart';
-import '../../../onboarding/profile/presentation/widgets/recipe_elevated_button.dart';
+import '../../../profile/presentation/widgets/recipe_elevated_button.dart';
 import '../../data/repositories/AuthRepository.dart';
 import '../manager/login_view_model.dart';
+import '../manager/register_view_model.dart';
 import '../widgets/recipe_password_form_field.dart';
 import '../widgets/recipe_text_form_field.dart';
 

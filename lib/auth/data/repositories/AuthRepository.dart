@@ -1,7 +1,6 @@
-import 'package:recipe_app_project1/auth/data/models/user_model.dart';
-
 import '../../../core/client.dart';
 import '../../../core/secure_storage.dart';
+import '../models/user_model.dart';
 
 class AuthRepository {
   AuthRepository({required this.client});

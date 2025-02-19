@@ -1,8 +1,9 @@
 import 'package:dio/dio.dart';
+import '../auth/data/models/user_model.dart';
 
 class ApiClient {
 
-  final Dio dio = Dio(BaseOptions(baseUrl: "http://192.168.37.64:8888/api/v1"));
+  final Dio dio = Dio(BaseOptions(baseUrl: "http://10.10.0.236:8888/api/v1"));
 
   Future<String> login(String login, String password) async {
     var response = await dio.post(
@@ -18,6 +19,28 @@ class ApiClient {
     }
   }
 
+  Future<String> register(UserModel user) async {
+    var response = await dio.post(
+      '/auth/register',
+      data: {
+
+        "username": user.username,
+        "fullName": user.fullName,
+        "email": user.email,
+        "phoneNumber": user.phoneNumber,
+        "birthDate": user.birthDate,
+        "password": user.password,
+
+      },
+    );
+
+    if (response.statusCode == 200) {
+      var data = Map<String, String>.from(response.data);
+      return data['accessToken']!;
+    } else {
+      throw Exception("User not found");
+    }
+  }
   Future<List<dynamic>> fetchOnboardingPages() async {
     var response = await dio.get('/onboarding/list');
     List<dynamic> data = response.data;
@@ -88,3 +111,5 @@ class ApiClient {
     return data;
   }
 }
+
+
