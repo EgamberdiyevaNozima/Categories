@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:recipe_app_project1/onboarding/profile/presentation/pages/profile_view_model.dart';
 import '../../../../core/client.dart';
-
 import '../../data/repositories/profile_repository.dart';
 import '../widgets/profile_page_app_bar.dart';
 
