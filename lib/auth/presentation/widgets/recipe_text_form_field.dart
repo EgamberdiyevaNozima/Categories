@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:profile/core/colors.dart';
-import 'package:profile/core/sizes.dart';
 
+import '../../../core/colors.dart';
+import '../../../core/sizes.dart';
 class RecipeTextFormField extends StatelessWidget {
   const RecipeTextFormField({
     super.key,
