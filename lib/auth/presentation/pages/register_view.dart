@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../../../core/colors.dart';
 import '../../../profile/presentation/widgets/recipe_elevated_button.dart';
-import '../manager/login_view_model.dart';
 import '../manager/register_view_model.dart';
 import '../widgets/recipe_password_form_field.dart';
-import '../widgets/recipe_text_form_field.dart';
 
 class RegisterView extends StatelessWidget {
   const RegisterView({
@@ -63,7 +61,7 @@ class RegisterView extends StatelessWidget {
                   ),
                   RecipePasswordFormField(
                     title: "Mobile Number",
-                    hintText: "+ 123 456 789",
+                    hintText: "+ 123456789",
                     hintStyle: TextStyle(
                       letterSpacing: 5,
                       color: AppColors.beigeColor.withValues(alpha: 0.45),
@@ -72,16 +70,70 @@ class RegisterView extends StatelessWidget {
                     ),
                     controller: vm.phoneNumberController,
                   ),
-                  RecipePasswordFormField(
-                    title: "Date of birth",
-                    hintText: "DD / MM /YYY",
-                    hintStyle: TextStyle(
-                      letterSpacing: 5,
-                      color: AppColors.beigeColor.withValues(alpha: 0.45),
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+                  GestureDetector(
+                    onTap: () async {
+                      // Sana tanlash uchun showDatePicker ishlatish
+                      DateTime? pickedDate = await showDatePicker(
+                        context: context,
+                        // Hozirgi sanani ko'rsatish
+                        initialDate: DateTime.now(),
+                        // Hozirgi sanani ko'rsatish
+                        firstDate: DateTime(1900),
+                        // Eng eski sana
+                        lastDate: DateTime(2101), // Eng yangi sana
+                      );
+                      if (pickedDate != null) {
+                        vm.birthDateController.text =
+                        "${pickedDate.day}/${pickedDate.month}/${pickedDate.year}";
+                      }
+                    },
+                    child: Theme(
+                      data: ThemeData(
+                        colorScheme: ColorScheme.dark(
+                          primary: AppColors.redPinkMain,
+                          surface: Colors.pinkAccent,
+                        ),
+                        textButtonTheme: TextButtonThemeData(
+                            style: TextButton.styleFrom(
+                              foregroundColor:
+                              AppColors.redPinkMain,
+                            ),
+
+
+                        ),
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Column(
+                          children: [
+                            Text(
+                              "Date of birth",
+                              style: TextStyle(
+                                  color: AppColors.redPinkMain,
+                                  fontSize: 15,
+                                  fontFamily: "Poppins",
+                                  fontWeight: FontWeight.w400),
+                            ),
+                            SizedBox(
+                                height: 7
+                            ),
+                            Container(
+                                height: 50, width: 357, color: AppColors.pink),
+                          ],
+                        ),
+                      ),
+                      // child: RecipePasswordFormField(
+                      //   title: "Date of birth",
+                      //   hintText: "DD/MM/YYYY",
+                      //   hintStyle: TextStyle(
+                      //     letterSpacing: 5,
+                      //     color: AppColors.beigeColor.withValues(alpha: 0.45),
+                      //     fontSize: 20,
+                      //     fontWeight: FontWeight.bold,
+                      //   ),
+                      //   controller: vm.birthDateController,
+                      // ),
                     ),
-                    controller: vm.birthDateController,
                   ),
                   RecipePasswordFormField(
                     title: "Password",
@@ -144,6 +196,8 @@ class RegisterView extends StatelessWidget {
                                     style: TextStyle(
                                         color: Colors.black,
                                         fontSize: 20,
+
+
                                         fontFamily: "Poppins",
                                         fontWeight: FontWeight.w600),
                                   ),
@@ -224,6 +278,8 @@ class RegisterView extends StatelessWidget {
                                 )
                               ],
                             ),
+
+
                           ],
                         ),
                       );
@@ -233,7 +289,6 @@ class RegisterView extends StatelessWidget {
                 size: Size(70, 45),
               ),
             ),
-            // SizedBox(height: 27),
           ],
         ),
       ),
