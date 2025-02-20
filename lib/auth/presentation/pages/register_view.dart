@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:recipe_app_project1/auth/presentation/manager/register_view_model.dart';
 import '../../../core/colors.dart';
 import '../../../onboarding/profile/presentation/widgets/recipe_elevated_button.dart';
-import '../manager/login_view_model.dart';
 import '../widgets/recipe_password_form_field.dart';
-import '../widgets/recipe_text_form_field.dart';
 
 class RegisterView extends StatelessWidget {
   const RegisterView({
@@ -72,16 +70,107 @@ class RegisterView extends StatelessWidget {
                     ),
                     controller: vm.phoneNumberController,
                   ),
-                  RecipePasswordFormField(
-                    title: "Date of birth",
-                    hintText: "DD/MM/YYY",
-                    hintStyle: TextStyle(
-                      letterSpacing: 5,
-                      color: AppColors.beigeColor.withValues(alpha: 0.45),
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+                  GestureDetector(
+                    onTap: () async {
+
+                      DateTime? pickedDate = await showDatePicker(
+                        context: context,
+                        initialDate: DateTime.now(),
+                        firstDate: DateTime(1900),
+                        lastDate: DateTime(2101),
+                      );
+                      if (pickedDate != null) {
+                        vm.birthDateController.text =
+                            "${pickedDate.day}/${pickedDate.month}/${pickedDate.year}";
+                      }
+                    },
+                    child: Theme(
+                      data: ThemeData(
+                        colorScheme: ColorScheme.dark(
+                          primary: AppColors.redPinkMain,
+                          surface: Colors.white,
+                        ),
+                        textButtonTheme: TextButtonThemeData(
+                          style: TextButton.styleFrom(
+                            foregroundColor:
+                                AppColors.redPinkMain,
+                          ),
+                        ),
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Column(
+                          children: [
+                            Text(
+                              "Date of birth",
+                              style: TextStyle(
+                                  color: AppColors.redPinkMain,
+                                  fontSize: 15,
+                                  fontFamily: "Poppins",
+                                  fontWeight: FontWeight.w400),
+                            ),
+                            SizedBox(
+                              height: 7
+                            ),
+                            Container(
+                                height: 50, width: 357, color: AppColors.pink),
+                          ],
+                        ),
+                        //  child:  Column(
+                        //     children: [
+                        //       Text(
+                        //         "Date of birth",
+                        //         style: TextStyle(
+                        //           color: AppColors.redPinkMain,
+                        //           fontSize: 15,
+                        //           fontFamily: "Poppins",
+                        //           fontWeight: FontWeight.w400,
+                        //         ),
+                        //       ),
+                        //       SizedBox(height: 7),
+                        //       GestureDetector(
+                        //         onTap: () async {
+                        //           DateTime? pickedDate = await showDatePicker(
+                        //             context: context,
+                        //             initialDate: DateTime.now(),
+                        //             firstDate: DateTime(1900),
+                        //             lastDate: DateTime(2101),
+                        //           );
+                        //           if (pickedDate != null) {
+                        //             // Tanlangan sanani kerakli formatda ko'rsatish
+                        //             vm.birthDateController.text =
+                        //             "${pickedDate.day}/${pickedDate.month}/${pickedDate.year}";
+                        //           }
+                        //         },
+                        //         child: Container(
+                        //           height: 50,
+                        //           width: 357,
+                        //           decoration: BoxDecoration(
+                        //             color: AppColors.pink,
+                        //             borderRadius: BorderRadius.circular(8), // Optional: rounded corners
+                        //           ),
+                        //           padding: EdgeInsets.symmetric(horizontal: 10), // Add some padding
+                        //           child: TextFormField(
+                        //             controller: vm.birthDateController,
+                        //             decoration: InputDecoration(
+                        //               hintText: "DD/MM/YYYY", // Hint text
+                        //               hintStyle: TextStyle(
+                        //                 color: AppColors.beigeColor.withOpacity(0.45),
+                        //                 fontSize: 18,
+                        //                 fontWeight: FontWeight.bold,
+                        //               ),
+                        //               border: InputBorder.none, // Remove the border
+                        //               contentPadding: EdgeInsets.symmetric(vertical: 15), // Vertical padding
+                        //             ),
+                        //             readOnly: true, // Make the field read-only to ensure only date picker can be used
+                        //           ),
+                        //         ),
+                        //       ),
+                        //     ],
+                        //   )
+
+                      ),
                     ),
-                    controller: vm.birthDateController,
                   ),
                   RecipePasswordFormField(
                     title: "Password",
@@ -233,7 +322,6 @@ class RegisterView extends StatelessWidget {
                 size: Size(70, 45),
               ),
             ),
-            // SizedBox(height: 27),
           ],
         ),
       ),
