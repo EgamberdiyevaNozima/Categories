@@ -2,17 +2,12 @@ import 'package:dio/dio.dart';
 import 'package:recipe_app_project1/auth/data/models/user_model.dart';
 import 'package:recipe_app_project1/core/secure_storage.dart';
 import 'package:go_router/go_router.dart';
-import 'package:dio/dio.dart';
-import 'package:recipe_app_project1/core/secure_storage.dart';
 import 'package:flutter/material.dart';
 
 import '../auth/data/repositories/AuthException.dart';
 import '../auth/data/repositories/AuthInterceptor.dart';
+import '../auth/data/repositories/gorouter.dart';
 
-class Routes {
-  static const String login = '/login';
-  static const String home = '/home';
-}
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
@@ -20,7 +15,7 @@ class ApiClient {
   ApiClient() {
     dio.interceptors.add(AuthInterceptor());
   }
-  final Dio dio = Dio(BaseOptions(baseUrl: "http://10.10.2.195:8888/api/v1"));
+  final Dio dio = Dio(BaseOptions(baseUrl: "http://192.168.0.105/api/v1"));
 
   Future<String> login(String login, String password) async {
     var response = await dio.post(
