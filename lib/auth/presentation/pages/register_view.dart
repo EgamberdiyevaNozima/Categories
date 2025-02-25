@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 import 'package:recipe_app_project1/auth/presentation/manager/register_view_model.dart';
 import 'package:recipe_app_project1/core/sizes.dart';
 import '../../../core/colors.dart';
+import '../../../main.dart';
 import '../../../onboarding/profile/presentation/widgets/recipe_elevated_button.dart';
 import '../widgets/recipe_password_form_field.dart';
 
@@ -20,6 +22,24 @@ class RegisterView extends StatelessWidget {
       listenable: vm,
       builder: (context, child) => Scaffold(
         appBar: AppBar(
+          actions: [
+            TextButton(
+              onPressed: () {
+                context.read<LocalizationViewModel>().currentLocale = Locale(
+                  "uz",
+                );
+              },
+              child: Text("uz"),
+            ),
+            TextButton(
+              onPressed: () {
+                context.read<LocalizationViewModel>().currentLocale = Locale(
+                  "en",
+                );
+              },
+              child: Text("en"),
+            ),
+          ],
           centerTitle: true,
           title: Text(
             "Sign up",

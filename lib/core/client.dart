@@ -15,7 +15,7 @@ class ApiClient {
   ApiClient() {
     dio.interceptors.add(AuthInterceptor());
   }
-  final Dio dio = Dio(BaseOptions(baseUrl: "http://192.168.0.105/api/v1"));
+  final Dio dio = Dio(BaseOptions(baseUrl: "http://10.10.3.166:8888/api/v1"));
 
   Future<String> login(String login, String password) async {
     var response = await dio.post(
