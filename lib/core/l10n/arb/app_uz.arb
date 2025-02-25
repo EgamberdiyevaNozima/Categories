@@ -1,0 +1,12 @@
+{
+  "hello": "Salom",
+  "email":"Email",
+  "password":"Parol",
+  "login":"Kirish",
+  "fullName":"Ism",
+  "mobilNumber":"Telefon raqami",
+  "dataofBirth":"Tug'ilgan kuni",
+  "confirmPassword": "Qayta parol kiriting"
+
+
+  }

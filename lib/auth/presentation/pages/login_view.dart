@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:profile/auth/presentation/pages/register_view.dart';
+import 'package:provider/provider.dart';
 import '../../../core/client.dart';
 import '../../../core/colors.dart';
+import '../../../main.dart';
 import '../../../profile/presentation/widgets/recipe_elevated_button.dart';
 import '../../data/repositories/AuthRepository.dart';
 import '../manager/login_view_model.dart';
@@ -19,10 +21,29 @@ class LoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final gn =context.watch<LocalizationViewModel>();
     return ListenableBuilder(
       listenable: vm,
       builder: (context, child) => Scaffold(
         appBar: AppBar(
+          actions: [
+            TextButton(
+              onPressed: () {
+                context.read<LocalizationViewModel>().currentLocale = Locale(
+                  "uz",
+                );
+              },
+              child: Text("uz"),
+            ),
+            TextButton(
+              onPressed: () {
+                context.read<LocalizationViewModel>().currentLocale = Locale(
+                  "en",
+                );
+              },
+              child: Text("en"),
+            ),
+          ],
           centerTitle: true,
           title: Text("Login"),
         ),
@@ -95,6 +116,7 @@ class LoginView extends StatelessWidget {
                 fontSize: 20,
                 callback: () {
                   Navigator.push(
+
                     context,
                     MaterialPageRoute(
                       builder: (context) => RegisterView(

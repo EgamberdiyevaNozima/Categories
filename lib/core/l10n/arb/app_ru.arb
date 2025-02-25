@@ -1,0 +1,13 @@
+{
+  "hello": "Privet",
+  "trendingRecipe": "Trendoviy Risept {nimadur}",
+  "@trendingRecipe": {
+    "description": "Ism berilsa trenddagi ritsept deb chiqarib beradi",
+    "placeholders": {
+      "nimadur": {
+        "type": "String",
+        "example": "Bolta sho'rva"
+      }
+    }
+  }
+}

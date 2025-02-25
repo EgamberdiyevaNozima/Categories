@@ -1,6 +1,10 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 import '../../../core/colors.dart';
+import '../../../core/sizes.dart';
+import '../../../main.dart';
 import '../../../profile/presentation/widgets/recipe_elevated_button.dart';
 import '../manager/register_view_model.dart';
 import '../widgets/recipe_password_form_field.dart';
@@ -19,6 +23,24 @@ class RegisterView extends StatelessWidget {
       listenable: vm,
       builder: (context, child) => Scaffold(
         appBar: AppBar(
+          actions: [
+            TextButton(
+              onPressed: () {
+                context.read<LocalizationViewModel>().currentLocale = Locale(
+                  "uz",
+                );
+              },
+              child: Text("uz"),
+            ),
+            TextButton(
+              onPressed: () {
+                context.read<LocalizationViewModel>().currentLocale = Locale(
+                  "en",
+                );
+              },
+              child: Text("en"),
+            ),
+          ],
           centerTitle: true,
           title: Text(
             "Sign up",
@@ -72,15 +94,11 @@ class RegisterView extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () async {
-                      // Sana tanlash uchun showDatePicker ishlatish
                       DateTime? pickedDate = await showDatePicker(
                         context: context,
-                        // Hozirgi sanani ko'rsatish
                         initialDate: DateTime.now(),
-                        // Hozirgi sanani ko'rsatish
                         firstDate: DateTime(1900),
-                        // Eng eski sana
-                        lastDate: DateTime(2101), // Eng yangi sana
+                        lastDate: DateTime(2026),
                       );
                       if (pickedDate != null) {
                         vm.birthDateController.text =
@@ -90,21 +108,20 @@ class RegisterView extends StatelessWidget {
                     child: Theme(
                       data: ThemeData(
                         colorScheme: ColorScheme.dark(
-                          primary: AppColors.redPinkMain,
-                          surface: Colors.pinkAccent,
+                            primary: AppColors.redPinkMain,
+                            surface: Colors.white,
+
                         ),
                         textButtonTheme: TextButtonThemeData(
-                            style: TextButton.styleFrom(
-                              foregroundColor:
-                              AppColors.redPinkMain,
-                            ),
-
-
+                          style: TextButton.styleFrom(
+                            foregroundColor: AppColors.redPinkMain,
+                          ),
                         ),
                       ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(15),
+                      child: Center(
                         child: Column(
+                          spacing:10 ,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               "Date of birth",
@@ -112,27 +129,32 @@ class RegisterView extends StatelessWidget {
                                   color: AppColors.redPinkMain,
                                   fontSize: 15,
                                   fontFamily: "Poppins",
-                                  fontWeight: FontWeight.w400),
-                            ),
-                            SizedBox(
-                                height: 7
+                                  fontWeight: FontWeight.w500),
                             ),
                             Container(
-                                height: 50, width: 357, color: AppColors.pink),
+                              alignment:Alignment.centerLeft,
+                              height: 48,
+                              width: 357,
+                              padding: EdgeInsets.only(left:AppSizes.padding36),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(18),
+                                color: AppColors.pink,
+                              ),
+                              child: Text(
+                                "DD/MM/YYY",
+                                style: TextStyle(
+                                  color: AppColors.beigeColor.withValues(alpha: 0.5),
+                                  fontWeight:FontWeight.w500,
+                                  fontSize: 20,
+                                  fontFamily: "Poppins",
+                                ),
+                              ),
+                            ),
+
+                            SizedBox(height: 7),
                           ],
                         ),
                       ),
-                      // child: RecipePasswordFormField(
-                      //   title: "Date of birth",
-                      //   hintText: "DD/MM/YYYY",
-                      //   hintStyle: TextStyle(
-                      //     letterSpacing: 5,
-                      //     color: AppColors.beigeColor.withValues(alpha: 0.45),
-                      //     fontSize: 20,
-                      //     fontWeight: FontWeight.bold,
-                      //   ),
-                      //   controller: vm.birthDateController,
-                      // ),
                     ),
                   ),
                   RecipePasswordFormField(
@@ -186,6 +208,7 @@ class RegisterView extends StatelessWidget {
                         context: context,
                         barrierDismissible: true,
                         builder: (context) => SimpleDialog(
+
                           backgroundColor: Colors.white,
                           title: Center(
                             child: Column(
@@ -196,8 +219,6 @@ class RegisterView extends StatelessWidget {
                                     style: TextStyle(
                                         color: Colors.black,
                                         fontSize: 20,
-
-
                                         fontFamily: "Poppins",
                                         fontWeight: FontWeight.w600),
                                   ),
@@ -268,6 +289,7 @@ class RegisterView extends StatelessWidget {
                                       fontFamily: "Poppins",
                                       fontWeight: FontWeight.w400),
                                 ),
+
                                 Text(
                                   "Quisque malesuada.",
                                   style: TextStyle(
@@ -278,8 +300,6 @@ class RegisterView extends StatelessWidget {
                                 )
                               ],
                             ),
-
-
                           ],
                         ),
                       );

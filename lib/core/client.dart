@@ -3,7 +3,7 @@ import '../auth/data/models/user_model.dart';
 
 class ApiClient {
 
-  final Dio dio = Dio(BaseOptions(baseUrl: "http://10.10.0.236:8888/api/v1"));
+  final Dio dio = Dio(BaseOptions(baseUrl: "http://10.10.3.191:8888/api/v1"));
 
   Future<String> login(String login, String password) async {
     var response = await dio.post(
@@ -111,5 +111,6 @@ class ApiClient {
     return data;
   }
 }
+
 
 

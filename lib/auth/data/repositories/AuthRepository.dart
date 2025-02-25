@@ -11,7 +11,7 @@ class AuthRepository {
     final String token = await client.login(login, password);
     await SecureStorage.deleteToken();
     await SecureStorage.deleteCredentials();
-    await SecureStorage.saveCredentials(login: login, password: password);
+    await SecureStorage.saveCredentials(login, password);
     await SecureStorage.saveToken(token);
   }
 

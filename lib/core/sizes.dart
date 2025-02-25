@@ -7,6 +7,10 @@ class AppSizes {
   static late double padding36;
   static late double padding38;
 
+  static var bottomNavBarWidth;
+
+  static var bottomNavBarHeight;
+
   static void init(BuildContext context) {
     var size = MediaQuery.sizeOf(context);
     wRatio = size.width / 430;
