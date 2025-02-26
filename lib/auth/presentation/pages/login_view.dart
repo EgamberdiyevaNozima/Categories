@@ -5,6 +5,7 @@ import 'package:recipe_app_project1/auth/presentation/pages/register_view.dart';
 import 'package:recipe_app_project1/main.dart';
 import '../../../core/client.dart';
 import '../../../core/colors.dart';
+import '../../../core/l10n/app_localizations.dart';
 import '../../../onboarding/profile/presentation/widgets/recipe_elevated_button.dart';
 import '../../data/repositories/AuthRepository.dart';
 import '../manager/login_view_model.dart';
@@ -45,7 +46,7 @@ class LoginView extends StatelessWidget {
             ),
           ],
           centerTitle: true,
-          title: Text("Login"),
+          title: Text(MyLocalizations.of(context)!.login),
         ),
         body: ListView(
           padding: EdgeInsets.only(top: 150),
@@ -56,13 +57,13 @@ class LoginView extends StatelessWidget {
                 spacing: 10,
                 children: [
                   RecipeTextFormField(
-                    title: "Email",
+                    title: MyLocalizations.of(context)!.email,
                     hintText: "example@gmail.com",
                     validator: (value) => null,
                     controller: vm.loginController,
                   ),
                   RecipePasswordFormField(
-                    title: "Password",
+                    title: MyLocalizations.of(context)!.password,
                     hintText: "●●●●●●●",
                     hintStyle: TextStyle(
                       letterSpacing: 5,
@@ -86,7 +87,7 @@ class LoginView extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 100),
               child: RecipeElevatedButton(
-                text: "Login",
+                text: MyLocalizations.of(context)!.login,
                 fontSize: 20,
                 callback: () async {
                   if (vm.formKey.currentState!.validate()) {
@@ -112,7 +113,7 @@ class LoginView extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 100),
               child: RecipeElevatedButton(
-                text: "Sign Up",
+                text: "Sing Up",
                 fontSize: 20,
                 callback: () {
                   Navigator.push(

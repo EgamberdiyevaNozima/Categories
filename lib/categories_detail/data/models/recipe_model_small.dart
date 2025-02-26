@@ -1,8 +1,10 @@
+
+
 class RecipeModelSmall {
   final int id;
   final String image, title, desc;
   final int time;
-  final num rating;
+  final double rating;
   final bool isLiked;
 
   RecipeModelSmall({
@@ -22,8 +24,8 @@ class RecipeModelSmall {
       title: json['title'] as String,
       desc: json['description'] as String,
       time: json['timeRequired'] as int,
-      rating: json['rating'],
-      isLiked: json['isLiked'] ?? false,
+      rating: (json['rating'] as num).toDouble(), // ✅ num -> double
+      isLiked: (json['isLiked'] as bool?) ?? false, // ✅ bool yoki false
     );
   }
 }

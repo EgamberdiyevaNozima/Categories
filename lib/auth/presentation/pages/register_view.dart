@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:recipe_app_project1/auth/presentation/manager/register_view_model.dart';
+import 'package:recipe_app_project1/core/l10n/app_localizations.dart';
 import 'package:recipe_app_project1/core/sizes.dart';
 import '../../../core/colors.dart';
 import '../../../main.dart';
@@ -22,27 +23,10 @@ class RegisterView extends StatelessWidget {
       listenable: vm,
       builder: (context, child) => Scaffold(
         appBar: AppBar(
-          actions: [
-            TextButton(
-              onPressed: () {
-                context.read<LocalizationViewModel>().currentLocale = Locale(
-                  "uz",
-                );
-              },
-              child: Text("uz"),
-            ),
-            TextButton(
-              onPressed: () {
-                context.read<LocalizationViewModel>().currentLocale = Locale(
-                  "en",
-                );
-              },
-              child: Text("en"),
-            ),
-          ],
+          // ------------------------------------------
           centerTitle: true,
           title: Text(
-            "Sign up",
+              "Sing Up",
             style: TextStyle(
                 color: AppColors.redPinkMain,
                 fontSize: 20,
@@ -59,7 +43,7 @@ class RegisterView extends StatelessWidget {
                 spacing: 10,
                 children: [
                   RecipePasswordFormField(
-                    title: "Full Name",
+                    title: MyLocalizations.of(context)!.fullName,
                     hintText: "John Doe",
                     hintStyle: TextStyle(
                       letterSpacing: 5,
@@ -70,7 +54,7 @@ class RegisterView extends StatelessWidget {
                     controller: vm.fullNameController,
                   ),
                   RecipePasswordFormField(
-                    title: "Email",
+                    title: MyLocalizations.of(context)!.email,
                     hintText: "example@gmail.com",
                     hintStyle: TextStyle(
                       letterSpacing: 5,
@@ -81,7 +65,7 @@ class RegisterView extends StatelessWidget {
                     controller: vm.emailController,
                   ),
                   RecipePasswordFormField(
-                    title: "Mobile Number",
+                    title: MyLocalizations.of(context)!.mobilNumber,
                     hintText: "+ 123456789",
                     hintStyle: TextStyle(
                       letterSpacing: 5,
@@ -156,7 +140,7 @@ class RegisterView extends StatelessWidget {
                     ),
                   ),
                   RecipePasswordFormField(
-                    title: "Password",
+                    title: MyLocalizations.of(context)!.password,
                     hintText: "●●●●●●●",
                     hintStyle: TextStyle(
                       letterSpacing: 5,
@@ -167,7 +151,7 @@ class RegisterView extends StatelessWidget {
                     controller: vm.passwordController,
                   ),
                   RecipePasswordFormField(
-                    title: "Confirm Password",
+                    title: MyLocalizations.of(context)!.confirmPassword,
                     hintText: "●●●●●●●",
                     hintStyle: TextStyle(
                       letterSpacing: 5,
@@ -191,7 +175,7 @@ class RegisterView extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 140),
               child: RecipeElevatedButton(
-                text: "Sign up",
+                text: "Sing Up",
                 fontSize: 20,
                 callback: () async {
                   if (vm.formKey.currentState!.validate()) {
@@ -212,7 +196,7 @@ class RegisterView extends StatelessWidget {
                               children: [
                                 Center(
                                   child: Text(
-                                    "Sign Up",
+                            MyLocalizations.of(context)!.password,
                                     style: TextStyle(
                                         color: Colors.black,
                                         fontSize: 20,
