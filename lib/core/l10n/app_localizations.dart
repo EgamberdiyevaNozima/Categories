@@ -144,6 +144,12 @@ abstract class MyLocalizations {
   /// In uz, this message translates to:
   /// **'Qayta parol kiriting'**
   String get confirmPassword;
+
+  /// No description provided for @signup.
+  ///
+  /// In uz, this message translates to:
+  /// **'Ro\'yhatdan o\'tish'**
+  String get signup;
 }
 
 class _MyLocalizationsDelegate extends LocalizationsDelegate<MyLocalizations> {

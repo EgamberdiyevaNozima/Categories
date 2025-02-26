@@ -31,4 +31,7 @@ class MyLocalizationsEn extends MyLocalizations {
 
   @override
   String get confirmPassword => 'Confirm Password';
+
+  @override
+  String get signup => 'Sign Up';
 }

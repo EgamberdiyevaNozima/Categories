@@ -65,8 +65,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:profile/categories_detail/data/repositories/categories_detail_repository.dart';
-import 'package:profile/categories_detail/presentation/pages/categories_detail_view.dart';
 import 'package:provider/provider.dart';
 import 'auth/data/repositories/AuthRepository.dart';
 import 'auth/presentation/manager/login_view_model.dart';
@@ -74,6 +72,8 @@ import 'auth/presentation/pages/login_view.dart';
 import 'categories/data/repositories/categories_repository.dart';
 import 'categories/presentation/pages/categories_view.dart';
 import 'categories/presentation/pages/categories_view_model.dart';
+import 'categories_detail/data/repositories/categories_detail_repository.dart';
+import 'categories_detail/presentation/pages/categories_detail_view.dart';
 import 'categories_detail/presentation/pages/categories_detail_view_model.dart';
 import 'core/client.dart';
 import 'core/colors.dart';
@@ -134,9 +134,18 @@ class ProfileApp extends StatelessWidget {
             ],
             supportedLocales: [Locale("uz"), Locale("en"), Locale("ru")],
             locale: context.watch<LocalizationViewModel>().currentLocale,
-            home: CategoriesDetailView(
-              viewModel: CategoriesDetailViewModel(
-                repo: CategoriesDetailRepository(client: ApiClient()),
+            home: LoginView(
+              vm: LoginViewModel(
+                  repo: AuthRepository(client: ApiClient())
+                // catsRepo: CategoriesRepository(
+                //   client: ApiClient(),
+                // ),
+                // selected: CategoryModel(
+                //   id: 3,
+                //   title: '',
+                //   image: '',
+                //   main: true,
+                // ),
               ),
             ),
           );

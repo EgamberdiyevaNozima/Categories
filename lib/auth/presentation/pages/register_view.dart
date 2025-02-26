@@ -1,11 +1,11 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import '../../../core/colors.dart';
+import '../../../core/l10n/app_localizations.dart';
+import '../../../core/presentation/widgets/recipe_elevated_button.dart';
 import '../../../core/sizes.dart';
 import '../../../main.dart';
-import '../../../profile/presentation/widgets/recipe_elevated_button.dart';
 import '../manager/register_view_model.dart';
 import '../widgets/recipe_password_form_field.dart';
 
@@ -23,32 +23,11 @@ class RegisterView extends StatelessWidget {
       listenable: vm,
       builder: (context, child) => Scaffold(
         appBar: AppBar(
-          actions: [
-            TextButton(
-              onPressed: () {
-                context.read<LocalizationViewModel>().currentLocale = Locale(
-                  "uz",
-                );
-              },
-              child: Text("uz"),
-            ),
-            TextButton(
-              onPressed: () {
-                context.read<LocalizationViewModel>().currentLocale = Locale(
-                  "en",
-                );
-              },
-              child: Text("en"),
-            ),
-          ],
+          // ------------------------------------------
           centerTitle: true,
           title: Text(
             "Sign up",
-            style: TextStyle(
-                color: AppColors.redPinkMain,
-                fontSize: 20,
-                fontFamily: "Poppins",
-                fontWeight: FontWeight.w600),
+            style: TextStyle(color: AppColors.redPinkMain, fontSize: 20, fontFamily: "Poppins", fontWeight: FontWeight.w600),
           ),
         ),
         body: ListView(
@@ -60,7 +39,7 @@ class RegisterView extends StatelessWidget {
                 spacing: 10,
                 children: [
                   RecipePasswordFormField(
-                    title: "Full Name",
+                    title: MyLocalizations.of(context)!.fullName,
                     hintText: "John Doe",
                     hintStyle: TextStyle(
                       letterSpacing: 5,
@@ -71,7 +50,7 @@ class RegisterView extends StatelessWidget {
                     controller: vm.fullNameController,
                   ),
                   RecipePasswordFormField(
-                    title: "Email",
+                    title: MyLocalizations.of(context)!.email,
                     hintText: "example@gmail.com",
                     hintStyle: TextStyle(
                       letterSpacing: 5,
@@ -82,7 +61,7 @@ class RegisterView extends StatelessWidget {
                     controller: vm.emailController,
                   ),
                   RecipePasswordFormField(
-                    title: "Mobile Number",
+                    title: MyLocalizations.of(context)!.mobilNumber,
                     hintText: "+ 123456789",
                     hintStyle: TextStyle(
                       letterSpacing: 5,
@@ -101,16 +80,14 @@ class RegisterView extends StatelessWidget {
                         lastDate: DateTime(2026),
                       );
                       if (pickedDate != null) {
-                        vm.birthDateController.text =
-                        "${pickedDate.day}/${pickedDate.month}/${pickedDate.year}";
+                        vm.birthDateController.text = "${pickedDate.day}/${pickedDate.month}/${pickedDate.year}";
                       }
                     },
                     child: Theme(
                       data: ThemeData(
                         colorScheme: ColorScheme.dark(
-                            primary: AppColors.redPinkMain,
-                            surface: Colors.white,
-
+                          primary: AppColors.redPinkMain,
+                          surface: Colors.white,
                         ),
                         textButtonTheme: TextButtonThemeData(
                           style: TextButton.styleFrom(
@@ -120,22 +97,18 @@ class RegisterView extends StatelessWidget {
                       ),
                       child: Center(
                         child: Column(
-                          spacing:10 ,
+                          spacing: 10,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               "Date of birth",
-                              style: TextStyle(
-                                  color: AppColors.redPinkMain,
-                                  fontSize: 15,
-                                  fontFamily: "Poppins",
-                                  fontWeight: FontWeight.w500),
+                              style: TextStyle(color: AppColors.redPinkMain, fontSize: 15, fontFamily: "Poppins", fontWeight: FontWeight.w500),
                             ),
                             Container(
-                              alignment:Alignment.centerLeft,
+                              alignment: Alignment.centerLeft,
                               height: 48,
                               width: 357,
-                              padding: EdgeInsets.only(left:AppSizes.padding36),
+                              padding: EdgeInsets.only(left: AppSizes.padding36),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(18),
                                 color: AppColors.pink,
@@ -144,13 +117,12 @@ class RegisterView extends StatelessWidget {
                                 "DD/MM/YYY",
                                 style: TextStyle(
                                   color: AppColors.beigeColor.withValues(alpha: 0.5),
-                                  fontWeight:FontWeight.w500,
+                                  fontWeight: FontWeight.w500,
                                   fontSize: 20,
                                   fontFamily: "Poppins",
                                 ),
                               ),
                             ),
-
                             SizedBox(height: 7),
                           ],
                         ),
@@ -158,7 +130,7 @@ class RegisterView extends StatelessWidget {
                     ),
                   ),
                   RecipePasswordFormField(
-                    title: "Password",
+                    title: MyLocalizations.of(context)!.password,
                     hintText: "●●●●●●●",
                     hintStyle: TextStyle(
                       letterSpacing: 5,
@@ -169,7 +141,7 @@ class RegisterView extends StatelessWidget {
                     controller: vm.passwordController,
                   ),
                   RecipePasswordFormField(
-                    title: "Confirm Password",
+                    title: MyLocalizations.of(context)!.confirmPassword,
                     hintText: "●●●●●●●",
                     hintStyle: TextStyle(
                       letterSpacing: 5,
@@ -208,29 +180,20 @@ class RegisterView extends StatelessWidget {
                         context: context,
                         barrierDismissible: true,
                         builder: (context) => SimpleDialog(
-
                           backgroundColor: Colors.white,
                           title: Center(
                             child: Column(
                               children: [
                                 Center(
                                   child: Text(
-                                    "Sign Up",
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20,
-                                        fontFamily: "Poppins",
-                                        fontWeight: FontWeight.w600),
+                                    MyLocalizations.of(context)!.password,
+                                    style: TextStyle(color: Colors.black, fontSize: 20, fontFamily: "Poppins", fontWeight: FontWeight.w600),
                                   ),
                                 ),
                                 Center(
                                   child: Text(
                                     "Succesful!",
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20,
-                                        fontFamily: "Poppins",
-                                        fontWeight: FontWeight.w600),
+                                    style: TextStyle(color: Colors.black, fontSize: 20, fontFamily: "Poppins", fontWeight: FontWeight.w600),
                                   ),
                                 ),
                                 SizedBox(height: 5),
@@ -267,36 +230,19 @@ class RegisterView extends StatelessWidget {
                                 ),
                                 Text(
                                   "Lorem ipsum dolor sit amet ",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 13,
-                                      fontFamily: "Poppins",
-                                      fontWeight: FontWeight.w400),
+                                  style: TextStyle(color: Colors.black, fontSize: 13, fontFamily: "Poppins", fontWeight: FontWeight.w400),
                                 ),
                                 Text(
                                   "pretium cras id dui",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 13,
-                                      fontFamily: "Poppins",
-                                      fontWeight: FontWeight.w400),
+                                  style: TextStyle(color: Colors.black, fontSize: 13, fontFamily: "Poppins", fontWeight: FontWeight.w400),
                                 ),
                                 Text(
                                   "pellentesque ornare.",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 13,
-                                      fontFamily: "Poppins",
-                                      fontWeight: FontWeight.w400),
+                                  style: TextStyle(color: Colors.black, fontSize: 13, fontFamily: "Poppins", fontWeight: FontWeight.w400),
                                 ),
-
                                 Text(
                                   "Quisque malesuada.",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 13,
-                                      fontFamily: "Poppins",
-                                      fontWeight: FontWeight.w400),
+                                  style: TextStyle(color: Colors.black, fontSize: 13, fontFamily: "Poppins", fontWeight: FontWeight.w400),
                                 )
                               ],
                             ),

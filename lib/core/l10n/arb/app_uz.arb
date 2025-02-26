@@ -6,7 +6,7 @@
   "fullName":"Ism",
   "mobilNumber":"Telefon raqami",
   "dataofBirth":"Tug'ilgan kuni",
-  "confirmPassword": "Qayta parol kiriting"
+  "confirmPassword": "Qayta parol kiriting",
+  "signup":"Ro'yhatdan o'tish"
 
-
-  }
+}

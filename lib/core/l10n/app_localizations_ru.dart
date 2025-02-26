@@ -31,4 +31,7 @@ class MyLocalizationsRu extends MyLocalizations {
 
   @override
   String get confirmPassword => 'Qayta parol kiriting';
+
+  @override
+  String get signup => 'Ro\'yhatdan o\'tish';
 }
