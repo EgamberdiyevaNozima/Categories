@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../categories/data/models/categories_model.dart';
 import '../../../categories/data/repositories/categories_repository.dart';
 import '../../data/models/recipe_model_small.dart';
-import '../../data/repositories/categories_detail_repository.dart';
+import '../../data/repositories/recipe_repository.dart';
 
 class CategoriesDetailViewModel extends ChangeNotifier {
   CategoriesDetailViewModel({
@@ -26,7 +26,7 @@ class CategoriesDetailViewModel extends ChangeNotifier {
   Future<void> load() async {
     try {
       categories = await _catsRepo.fetchCategories();
-      recipes = await _repo.fetchRecipes(selected.id);
+      recipes = await _repo.fetchRecipesByCategory(selected.id);
     } finally {
       notifyListeners();
     }
@@ -35,7 +35,7 @@ class CategoriesDetailViewModel extends ChangeNotifier {
   Future<void> loadRefresh() async {
     try {
       categories = await _catsRepo.fetchCategories(refresh: true);
-      recipes = await _repo.fetchRecipes(selected.id);
+      recipes = await _repo.fetchRecipesByCategory(selected.id);
     } finally {
       notifyListeners();
     }

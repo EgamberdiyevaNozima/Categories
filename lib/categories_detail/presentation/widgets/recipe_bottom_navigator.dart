@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:recipe_app_project1/categories_detail/presentation/widgets/recipe_icon_button.dart';
-import '../../../auth/data/repositories/gorouter.dart';
 import '../../../core/colors.dart';
+import '../../../core/routing/routes.dart';
 import '../../../core/sizes.dart';
 import 'bottom_shadow.dart';
-class Routes {
-  static const String home = '/home';
-  static const String categories = '/categories';  // Bu yerga categories yo'lini qo'shing
-  static const String myProfile = '/myProfile';
-}
-class AppSizes {
-  static double bottomNavBarWidth = 360.0;  // Kiritilgan kenglik qiymati
-  static double bottomNavBarHeight = 60.0;  // Kiritilgan balandlik qiymati
-}
+
+// class AppSizes {
+//   static double bottomNavBarWidth = 360.0;
+//   static double bottomNavBarHeight = 60.0;
+//
+//   static double padding36=20;
+// }
 // -------------------------------------------------------------------------------------------
 class RecipeBottomNavigationBar extends StatelessWidget {
   const RecipeBottomNavigationBar({super.key});

@@ -4,13 +4,15 @@ import 'package:provider/provider.dart';
 import 'package:recipe_app_project1/auth/data/repositories/AuthRepository.dart';
 import 'package:recipe_app_project1/auth/presentation/pages/login_view.dart';
 import 'package:recipe_app_project1/core/colors.dart';
+import 'package:recipe_app_project1/recipe_detail/data/repositories/recipe_detail_repository.dart';
+import 'package:recipe_app_project1/recipe_detail/presentation/pages/recipe_detail_view.dart';
+import 'package:recipe_app_project1/recipe_detail/presentation/pages/recipe_detail_view_model.dart';
 
 import 'auth/presentation/manager/login_view_model.dart';
 import 'categories/data/models/categories_model.dart';
 import 'categories/data/repositories/categories_repository.dart';
 import 'categories/presentation/pages/categories_view.dart';
 import 'categories/presentation/pages/categories_view_model.dart';
-import 'categories_detail/data/repositories/categories_detail_repository.dart';
 import 'categories_detail/presentation/pages/categories_detail_view.dart';
 import 'categories_detail/presentation/pages/categories_detail_view_model.dart';
 import 'core/client.dart';
@@ -19,6 +21,7 @@ import 'core/sizes.dart';
 import 'onboarding/data/repositories/onboarding_repositories.dart';
 import 'onboarding/presentation/managers/onboarding_view_model.dart';
 import 'onboarding/presentation/pages/onboarding_view.dart';
+import 'categories_detail/data/models/recipe_model_small.dart';
 
 void main() {
   runApp(ProfileApp());
@@ -71,20 +74,13 @@ class ProfileApp extends StatelessWidget {
             ],
             supportedLocales: [Locale("uz"), Locale("en"), Locale("ru")],
             locale: context.watch<LocalizationViewModel>().currentLocale,
-            home: LoginView(
-              vm: LoginViewModel(
-                repo: AuthRepository(client: ApiClient())
-                // catsRepo: CategoriesRepository(
-                //   client: ApiClient(),
-                // ),
-                // selected: CategoryModel(
-                //   id: 3,
-                //   title: '',
-                //   image: '',
-                //   main: true,
-                // ),
-              ),
-            ),
+            home: RecipeDetailView(viewModel: RecipeDetailViewModel(repo: RecipeDetailRepository(client: ApiClient()), selected:RecipeModelSmall(id: 1,
+              image: 'image_url',
+              title: 'Recipe Title',
+              desc: 'Recipe description',
+              time: 30,
+              rating: 4.5,
+              isLiked: true,),from: '/category-detail')),
           );
         },
       ),

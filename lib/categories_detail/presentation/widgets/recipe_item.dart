@@ -3,15 +3,11 @@ import 'package:go_router/go_router.dart';
 import 'package:recipe_app_project1/categories_detail/presentation/widgets/recipe_appbar_action.dart';
 import 'package:recipe_app_project1/categories_detail/presentation/widgets/recipe_item_image.dart';
 import 'package:recipe_app_project1/categories_detail/presentation/widgets/recipe_item_info.dart';
-
-import '../../../auth/data/repositories/gorouter.dart';
 import '../../../core/colors.dart';
+import '../../../core/routing/routes.dart';
 import '../../../core/sizes.dart';
 import '../../data/models/recipe_model_small.dart';
-class Routes {
-  static const String home = '/home';
-  static const String recipeDetail = '/recipeDetail';  // Bu yerga yo'lni qo'shing
-}
+
 
 class RecipeItem extends StatelessWidget {
   const RecipeItem({

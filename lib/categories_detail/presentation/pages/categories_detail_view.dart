@@ -9,7 +9,7 @@ import 'package:recipe_app_project1/categories_detail/presentation/widgets/recip
 
 import 'categories_detail_view_model.dart';
 import 'package:recipe_app_project1/categories_detail/presentation/widgets/recipe_bottom_navigator.dart' hide AppSizes;
-import 'package:recipe_app_project1/core/sizes.dart'; // faqat buni ishlatish
+import 'package:recipe_app_project1/core/sizes.dart';
 
 class CategoriesDetailView extends StatelessWidget {
   const CategoriesDetailView({

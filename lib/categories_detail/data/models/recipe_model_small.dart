@@ -24,8 +24,8 @@ class RecipeModelSmall {
       title: json['title'] as String,
       desc: json['description'] as String,
       time: json['timeRequired'] as int,
-      rating: (json['rating'] as num).toDouble(), // ✅ num -> double
-      isLiked: (json['isLiked'] as bool?) ?? false, // ✅ bool yoki false
+      rating: (json['rating'] as num).toDouble(),
+      isLiked: (json['isLiked'] as bool?) ?? false,
     );
   }
 }
