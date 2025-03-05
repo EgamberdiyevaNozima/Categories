@@ -1,19 +1,11 @@
-
-// class Routes {
-//   static const home = '/';
-//   static const onboarding = '/onboarding';
-//   static const welcome = '/welcome';
-//   static const login = '/login';
-//   static const signup = '/signup';
-//   static const complete = '/complete';
-// }
-class Routes{
-  static const String home = '/home';
-  static const String categories = '/categories';
-  static const String myProfile = '/myProfile';
-
-  static const String categoryDetail = '/category-detail';
-  static const String recipeDetail = '/recipe-detail';
-
-  static String login= '/login';
+class Routes {
+  static const login = '/login';
+  static const signup = "/signup";
+  static const categories = '/categories';
+  static const onboarding = "/onboarding";
+  static const register_profile = '/register-profile';
+  // static const recipeDetails = '/recipe-details';
+  static const category_detail = '/category-detail';
+  static const recipe_detail = '/recipe-detail/:recipeId';
+  static const home = '/home';
 }

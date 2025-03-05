@@ -3,13 +3,8 @@ import 'package:flutter/cupertino.dart';
 class AppSizes {
   static late double wRatio;
   static late double hRatio;
-
   static late double padding36;
   static late double padding38;
-
-  static late double bottomNavBarWidth;
-
-  static late double bottomNavBarHeight;
 
   static void init(BuildContext context) {
     var size = MediaQuery.sizeOf(context);
