@@ -1,0 +1,14 @@
+{
+  "signUp": "Sign Up",
+  "fullName": "Full Name",
+  "lastName": "Last Name",
+  "userName": "User Name",
+  "email": "Email",
+  "mobileNumber": "Mobile Number",
+  "dateOfBirth": "Date Of Birth",
+  "password": "Password",
+  "confirmPassword": "Confirm Password",
+  "signUpButton": "Sign Up",
+  "login": "Login",
+  "signup": "Sign Up"
+}
