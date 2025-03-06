@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:new_recipe_app/profile/presentation/widgets/profile_elevated_button.dart';
+import 'package:recipe_app_project1/profile/presentation/widgets/profile_elevated_button.dart';
 
 class bottom_buttons_row extends StatelessWidget {
   const bottom_buttons_row({

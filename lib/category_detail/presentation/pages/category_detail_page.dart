@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:new_recipe_app/core/widgets/bottom_nav_bar.dart';
-import 'package:new_recipe_app/category_detail/presentation/widgets/recipe_app_bar_bottom.dart';
-import 'package:new_recipe_app/category_detail/presentation/widgets/recipe_item.dart';
-import 'package:new_recipe_app/core/utils/app_colors.dart';
-import 'package:new_recipe_app/login/presentation/widgets/login_appbar_widget.dart';
 
+import '../../../core/utils/app_colors.dart';
+import '../../../core/widgets/bottom_nav_bar.dart';
+import '../../../login/presentation/widgets/login_appbar_widget.dart';
 import '../manager/category_detail_view_model.dart';
+import '../widgets/recipe_app_bar_bottom.dart';
+import '../widgets/recipe_item.dart';
 
 class CategoryDetailPage extends StatelessWidget {
   const CategoryDetailPage({super.key, required this.vm});

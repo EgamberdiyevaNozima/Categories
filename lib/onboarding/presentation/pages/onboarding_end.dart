@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:new_recipe_app/onboarding/presentation/widgets/onboarding_end_categories_widget.dart';
-import 'package:new_recipe_app/onboarding/presentation/widgets/elevatedbutton_widget.dart';
-import 'package:new_recipe_app/profile/presentation/pages/profile_view_model.dart';
+import '../../../profile/presentation/pages/profile_view_model.dart';
+import '../widgets/elevatedbutton_widget.dart';
+import '../widgets/onboarding_end_categories_widget.dart';
 
 class OnboardingEnd extends StatelessWidget {
   const OnboardingEnd({super.key, required this.pvm});

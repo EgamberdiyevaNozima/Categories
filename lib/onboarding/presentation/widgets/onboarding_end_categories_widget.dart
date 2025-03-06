@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:new_recipe_app/profile/presentation/pages/profile_view_model.dart';
+
+import '../../../profile/presentation/pages/profile_view_model.dart';
 
 class onboarding_end_categories_widget extends StatelessWidget {
   const onboarding_end_categories_widget({

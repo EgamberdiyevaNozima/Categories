@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:new_recipe_app/core/utils/app_colors.dart';
-import 'package:new_recipe_app/profile_register/presentation/manager/profile_register_viewmodel.dart';
+
 import 'package:provider/provider.dart';
+
+import '../../../core/utils/app_colors.dart';
+import '../manager/profile_register_viewmodel.dart';
 
 class bio_field extends StatelessWidget {
   const bio_field({

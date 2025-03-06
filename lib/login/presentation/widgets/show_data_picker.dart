@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:new_recipe_app/core/l10n/app_localizations.dart';
-import 'package:new_recipe_app/core/utils/app_colors.dart';
-import 'package:new_recipe_app/login/presentation/manager/sign_up_viewmodel.dart';
+
 import 'package:provider/provider.dart';
+
+import '../../../core/l10n/app_localizations.dart';
+import '../../../core/utils/app_colors.dart';
+import '../manager/sign_up_viewmodel.dart';
 
 class show_data_picker extends StatelessWidget {
   const show_data_picker({

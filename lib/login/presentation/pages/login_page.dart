@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:new_recipe_app/core/l10n/app_localizations.dart';
-import 'package:new_recipe_app/core/localization_viewmodel.dart';
-import 'package:new_recipe_app/core/utils/app_colors.dart';
-import 'package:new_recipe_app/login/presentation/manager/login_view_model.dart';
-import 'package:new_recipe_app/login/presentation/widgets/social_networks.dart';
-import 'package:new_recipe_app/login/presentation/widgets/login_password.dart';
-import 'package:new_recipe_app/login/presentation/widgets/login_elevated_button.dart';
 import 'package:provider/provider.dart';
+
+import '../../../core/l10n/app_localizations.dart';
+import '../../../core/utils/app_colors.dart';
+import '../manager/login_view_model.dart';
+import '../widgets/login_elevated_button.dart';
+import '../widgets/login_password.dart';
+import '../widgets/social_networks.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key, required this.vm});

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:new_recipe_app/category_detail/data/models/recipe_model.dart';
-import 'package:new_recipe_app/category_detail/presentation/widgets/recipe_item_description.dart';
-import 'package:new_recipe_app/category_detail/presentation/widgets/recipe_item_image.dart';
-import 'package:new_recipe_app/category_detail/presentation/widgets/recipe_item_title.dart';
-import 'package:new_recipe_app/category_detail/presentation/widgets/recipe_rating.dart';
-import 'package:new_recipe_app/category_detail/presentation/widgets/recipe_time.dart';
+import 'package:recipe_app_project1/category_detail/presentation/widgets/recipe_item_description.dart';
+import 'package:recipe_app_project1/category_detail/presentation/widgets/recipe_item_image.dart';
+import 'package:recipe_app_project1/category_detail/presentation/widgets/recipe_item_title.dart';
+import 'package:recipe_app_project1/category_detail/presentation/widgets/recipe_rating.dart';
+import 'package:recipe_app_project1/category_detail/presentation/widgets/recipe_time.dart';
+
+import '../../data/models/recipe_model.dart';
 
 class RecipeItem extends StatelessWidget {
   const RecipeItem({

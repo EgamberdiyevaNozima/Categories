@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:new_recipe_app/category_detail/presentation/widgets/recipe_app_bar_bottom_item.dart';
+import 'package:recipe_app_project1/category_detail/presentation/widgets/recipe_app_bar_bottom_item.dart';
 import '../manager/category_detail_view_model.dart';
 
 class RecipeAppBarBottom extends StatelessWidget

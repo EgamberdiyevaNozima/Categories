@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:new_recipe_app/core/utils/app_colors.dart';
-import 'package:new_recipe_app/profile/presentation/widgets/profile_appbar_action_container.dart';
+
+import '../../../core/utils/app_colors.dart';
+import '../../../profile/presentation/widgets/profile_appbar_action_container.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   const AppBarWidget({

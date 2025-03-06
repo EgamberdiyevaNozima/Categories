@@ -1,6 +1,7 @@
-import 'package:new_recipe_app/recipe_detail/data/models/recipe_detail_ingredient_model.dart';
-import 'package:new_recipe_app/recipe_detail/data/models/recipe_detail_instruction_model.dart';
-import 'package:new_recipe_app/recipe_detail/data/models/recipe_detail_user_model.dart';
+
+import 'package:recipe_app_project1/recipe_detail/data/models/recipe_detail_ingredient_model.dart';
+import 'package:recipe_app_project1/recipe_detail/data/models/recipe_detail_instruction_model.dart';
+import 'package:recipe_app_project1/recipe_detail/data/models/recipe_detail_user_model.dart';
 
 class RecipeDetailModel {
   final int id, categoryId;

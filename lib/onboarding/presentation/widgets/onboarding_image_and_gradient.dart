@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:new_recipe_app/core/utils/app_colors.dart';
-import 'package:new_recipe_app/onboarding/presentation/manager/onboarding_view_model.dart';
-import 'package:new_recipe_app/onboarding/presentation/widgets/onboarding_appbar.dart';
-import 'package:new_recipe_app/onboarding/presentation/widgets/button_positioned.dart';
-import 'package:new_recipe_app/onboarding/presentation/widgets/top_shadow.dart';
+
+import '../../../core/utils/app_colors.dart';
+import '../manager/onboarding_view_model.dart';
 
 class onboarding_imageAndGradient extends StatelessWidget {
   const onboarding_imageAndGradient({

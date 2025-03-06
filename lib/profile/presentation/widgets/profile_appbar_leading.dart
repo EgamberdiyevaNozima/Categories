@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:new_recipe_app/profile/presentation/pages/profile_view_model.dart';
+
+import '../pages/profile_view_model.dart';
 
 class profile_appbar_leading extends StatelessWidget {
   const profile_appbar_leading({

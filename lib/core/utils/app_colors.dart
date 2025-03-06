@@ -8,6 +8,13 @@ class AppColors {
   static const Color pinkSub = Color(0xFFEC888D);
   static const Color milkWhite = Color(0xFFFFFDF9);
 
+
+
+  static const whiteColor = Color(0xffFFFFFF);
+  static const backgroundColor = Color(0xff1C0F0D);
+  static const pinkColor = Color(0xffEC888D);
+
+
   static final lightColorScheme = ColorScheme(
     brightness: Brightness.dark,
     surface: beigeColor,

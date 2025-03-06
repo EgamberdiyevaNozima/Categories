@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:new_recipe_app/category_detail/presentation/widgets/recipe_rating.dart';
-import 'package:new_recipe_app/category_detail/presentation/widgets/recipe_time.dart';
-import 'package:new_recipe_app/core/utils/app_colors.dart';
+import '../../../category_detail/presentation/widgets/recipe_rating.dart';
+import '../../../category_detail/presentation/widgets/recipe_time.dart';
+import '../../../core/utils/app_colors.dart';
 
 class RecipesItemContainer extends StatelessWidget {
   const RecipesItemContainer({

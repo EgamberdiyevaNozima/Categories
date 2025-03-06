@@ -1,5 +1,7 @@
-import 'package:new_recipe_app/core/client.dart';
-import 'package:new_recipe_app/profile/data/models/profile_model.dart';
+
+
+import '../../../core/client.dart';
+import '../models/profile_model.dart';
 
 class ProfileRepository {
   ProfileRepository({required this.client});

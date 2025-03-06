@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:new_recipe_app/core/l10n/app_localizations.dart';
-import 'package:new_recipe_app/core/localization_viewmodel.dart';
-import 'package:new_recipe_app/core/sizes.dart';
 import 'package:provider/provider.dart';
 import 'core/dependencies.dart' show providers;
+import 'core/l10n/app_localizations.dart';
+import 'core/localization_viewmodel.dart';
 import 'core/routing/router.dart';
+import 'core/sizes.dart';
 import 'core/utils/theme.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();

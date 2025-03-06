@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:new_recipe_app/login/data/repositories/auth_repository.dart';
-import 'package:new_recipe_app/login/presentation/widgets/show_dialog.dart';
-
 import '../../../core/routing/routes.dart';
+import '../../data/repositories/auth_repository.dart';
+import '../widgets/show_dialog.dart';
 
 class SignUpViewModel extends ChangeNotifier {
   SignUpViewModel({required AuthRepository authRepo}) : _authRepo = authRepo;

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:new_recipe_app/onboarding/data/models/onboarding_model.dart';
-import 'package:new_recipe_app/onboarding/presentation/manager/onboarding_view_model.dart';
-import 'package:new_recipe_app/onboarding/presentation/widgets/elevatedbutton_widget.dart';
+
+import '../manager/onboarding_view_model.dart';
+import 'elevatedbutton_widget.dart';
 
 class button_positioned extends StatelessWidget {
   const button_positioned({

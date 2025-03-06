@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:new_recipe_app/core/utils/app_colors.dart';
-import 'package:new_recipe_app/profile_register/presentation/manager/profile_register_viewmodel.dart';
+import '../../../core/utils/app_colors.dart';
+import '../manager/profile_register_viewmodel.dart';
 
 class GenderBottomSheet extends StatelessWidget {
   const GenderBottomSheet({

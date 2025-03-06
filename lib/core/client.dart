@@ -1,12 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:go_router/go_router.dart';
-import 'package:new_recipe_app/core/routing/router.dart';
-import 'package:new_recipe_app/core/routing/routes.dart';
-import 'package:new_recipe_app/core/secure_storage.dart';
-import 'package:new_recipe_app/login/data/model/user_model.dart';
+import 'package:recipe_app_project1/core/routing/routes.dart';
+import 'package:recipe_app_project1/core/secure_storage.dart';
+
+import '../login/data/model/user_model.dart';
+import '../main.dart';
 
 class ApiClient {
-  final Dio dio = Dio(BaseOptions(baseUrl: "http://172.28.0.1:8888/api/v1"));
+  final Dio dio = Dio(BaseOptions(baseUrl: "http://10.10.0.9:8888/api/v1"));
 
   Future<Map<String, dynamic>> fetchMyProfile() async {
     try {
@@ -24,7 +25,7 @@ class ApiClient {
           throw Exception("Login credentials not found.");
         }
         final jwt =
-            await login(credentials['login']!, credentials['password']!);
+        await login(credentials['login']!, credentials['password']!);
 
         await SecureStorage.deleteToken();
         await SecureStorage.saveToken(jwt);
@@ -58,19 +59,29 @@ class ApiClient {
     var responseRecipe = await dio.get('/recipes/list');
     if (responseRecipe.statusCode == 200) {
       List<Map<String, dynamic>> dataRecipe =
-          List<Map<String, dynamic>>.from(responseRecipe.data);
+      List<Map<String, dynamic>>.from(responseRecipe.data);
       return dataRecipe;
     } else {
       throw Exception("error 404");
     }
   }
 
+  Future<dynamic> fetchRecipeTrendingRecipes() async {
+    var response = await dio.get('/recipes/trending-recipe');
+    if (response.statusCode == 200) {
+      return response.data;
+    } else {
+      throw Exception("Error");
+    }
+  }
+
+
   Future<List<Map<String, dynamic>>> fetchCategories() async {
     var responseCategories = await dio.get('/categories/list');
 
     if (responseCategories.statusCode == 200) {
       List<Map<String, dynamic>> dataCategories =
-          List<Map<String, dynamic>>.from(responseCategories.data);
+      List<Map<String, dynamic>>.from(responseCategories.data);
       return dataCategories;
     } else {
       throw Exception("Error");
@@ -118,4 +129,16 @@ class ApiClient {
       throw Exception('/recipes/list?Category=$recipeId ERROR STATUS CODE');
     }
   }
+
+  Future<List< dynamic>> fetchYourRecipes() async {
+    var response  = await dio.get('/recipes/list?Limit=2');
+
+    if (response.statusCode == 200) {
+      List< dynamic> data =response.data;
+      return data;
+    } else {
+      throw Exception("/recipes/list?Limit=2 sorovi xato ketayabdi");
+    }
+  }
+
 }

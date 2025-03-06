@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:new_recipe_app/core/sizes.dart';
 
+import '../../../core/sizes.dart';
 import '../../../core/utils/app_colors.dart';
 
 class profile_body_recipe extends StatelessWidget {

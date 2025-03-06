@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:new_recipe_app/profile/presentation/pages/profile_view_model.dart';
-import 'package:new_recipe_app/profile/presentation/widgets/bottom_buttons_row.dart';
-import 'package:new_recipe_app/profile/presentation/widgets/bottom_tabbar.dart';
-import 'package:new_recipe_app/profile/presentation/widgets/profile_appbar_bottom_stats.dart';
+import 'package:recipe_app_project1/profile/presentation/widgets/profile_appbar_bottom_stats.dart';
+
+import '../pages/profile_view_model.dart';
+import 'bottom_buttons_row.dart';
+import 'bottom_tabbar.dart';
 
 class profile_appbar_bottom extends StatelessWidget
     implements PreferredSizeWidget {

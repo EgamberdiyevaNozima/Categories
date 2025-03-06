@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:new_recipe_app/core/utils/app_colors.dart';
 import 'package:video_player/video_player.dart';
+
+import '../../../core/utils/app_colors.dart';
 
 class RecipeDetailVideo extends StatefulWidget {
   const RecipeDetailVideo({super.key, required this.videoUrl});

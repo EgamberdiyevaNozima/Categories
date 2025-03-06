@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:new_recipe_app/core/utils/app_colors.dart';
+
+import '../../../core/utils/app_colors.dart';
 
 class bottom_stats extends StatelessWidget {
   const bottom_stats({

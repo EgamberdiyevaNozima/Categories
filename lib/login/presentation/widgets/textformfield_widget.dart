@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:new_recipe_app/core/utils/app_colors.dart';
+
+import '../../../core/utils/app_colors.dart';
 
 class textformfield_widget extends StatelessWidget {
   const textformfield_widget({

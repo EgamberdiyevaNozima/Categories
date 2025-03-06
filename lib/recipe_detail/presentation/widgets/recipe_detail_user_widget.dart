@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:new_recipe_app/core/utils/app_colors.dart';
-import 'package:new_recipe_app/recipe_detail/presentation/manager/recipe_detail_view_model.dart';
+
+import '../../../core/utils/app_colors.dart';
+import '../manager/recipe_detail_view_model.dart';
 
 class RecipeDetailUserWidget extends StatelessWidget {
   const RecipeDetailUserWidget({

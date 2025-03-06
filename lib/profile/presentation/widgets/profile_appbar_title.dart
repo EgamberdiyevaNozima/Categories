@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:new_recipe_app/core/sizes.dart';
-import 'package:new_recipe_app/core/utils/app_colors.dart';
-import 'package:new_recipe_app/profile/presentation/pages/profile_view_model.dart';
+import '../../../core/sizes.dart';
+import '../../../core/utils/app_colors.dart';
+import '../pages/profile_view_model.dart';
 
 class profile_appbar_title extends StatelessWidget {
   const profile_appbar_title({

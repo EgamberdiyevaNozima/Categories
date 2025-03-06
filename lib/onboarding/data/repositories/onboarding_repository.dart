@@ -1,5 +1,6 @@
-import 'package:new_recipe_app/core/client.dart';
-import 'package:new_recipe_app/onboarding/data/models/onboarding_model.dart';
+
+import '../../../core/client.dart';
+import '../models/onboarding_model.dart';
 
 class OnBoardingRepository {
   OnBoardingRepository({required this.client});

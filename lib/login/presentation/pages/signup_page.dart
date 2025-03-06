@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:new_recipe_app/core/l10n/app_localizations.dart';
-import 'package:new_recipe_app/core/localization_viewmodel.dart';
-import 'package:new_recipe_app/core/utils/app_colors.dart';
-import 'package:new_recipe_app/login/presentation/manager/sign_up_viewmodel.dart';
-import 'package:new_recipe_app/login/presentation/widgets/show_data_picker.dart';
-import 'package:new_recipe_app/login/presentation/widgets/signup_button.dart';
-import 'package:new_recipe_app/login/presentation/widgets/textformfield_widget.dart';
+
 import 'package:provider/provider.dart';
+
+import '../../../core/l10n/app_localizations.dart';
+import '../../../core/localization_viewmodel.dart';
+import '../../../core/utils/app_colors.dart';
+import '../manager/sign_up_viewmodel.dart';
+import '../widgets/show_data_picker.dart';
+import '../widgets/signup_button.dart';
+import '../widgets/textformfield_widget.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});

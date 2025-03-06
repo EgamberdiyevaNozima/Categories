@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:new_recipe_app/categories/data/models/categories_model.dart';
-import 'package:new_recipe_app/categories/data/repositories/category_repository.dart';
+import '../../../categories/data/models/categories_model.dart';
+import '../../../categories/data/repositories/category_repository.dart';
 import '../../data/models/recipe_model.dart';
 import '../../data/repositories/recipe_repoitory.dart';
 

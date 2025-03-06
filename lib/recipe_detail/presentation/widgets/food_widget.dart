@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:new_recipe_app/category_detail/presentation/widgets/recipe_rating.dart';
-import 'package:new_recipe_app/core/utils/app_colors.dart';
-import 'package:new_recipe_app/profile_register/presentation/widgets/video_player_widget.dart';
-import 'package:new_recipe_app/recipe_detail/presentation/manager/recipe_detail_view_model.dart';
-import 'package:new_recipe_app/recipe_detail/presentation/pages/recipe_detail_video.dart';
+
+import '../../../category_detail/presentation/widgets/recipe_rating.dart';
+import '../../../core/utils/app_colors.dart';
+import '../manager/recipe_detail_view_model.dart';
+import '../pages/recipe_detail_video.dart';
 
 class FoodWidget extends StatelessWidget {
   const FoodWidget({

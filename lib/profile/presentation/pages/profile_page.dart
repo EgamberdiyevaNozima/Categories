@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:new_recipe_app/profile/presentation/pages/profile_body_recipe.dart';
-import 'package:new_recipe_app/profile/presentation/pages/profile_view_model.dart';
+import 'package:recipe_app_project1/profile/presentation/pages/profile_body_recipe.dart';
+import 'package:recipe_app_project1/profile/presentation/pages/profile_view_model.dart';
 
 import '../../../core/utils/app_colors.dart';
 import '../widgets/profile_page_app_bar.dart';

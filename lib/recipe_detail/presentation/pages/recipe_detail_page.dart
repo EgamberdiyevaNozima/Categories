@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:new_recipe_app/core/utils/app_colors.dart';
-import 'package:new_recipe_app/core/widgets/bottom_nav_bar.dart';
-import 'package:new_recipe_app/login/presentation/widgets/login_appbar_widget.dart';
-import 'package:new_recipe_app/recipe_detail/presentation/manager/recipe_detail_view_model.dart';
-import 'package:new_recipe_app/recipe_detail/presentation/widgets/details_widget.dart';
-import 'package:new_recipe_app/recipe_detail/presentation/widgets/food_widget.dart';
-import 'package:new_recipe_app/recipe_detail/presentation/widgets/recipe_detail_main_text.dart';
-import 'package:new_recipe_app/recipe_detail/presentation/widgets/recipe_detail_user_widget.dart';
+
 import 'package:provider/provider.dart';
+
+import '../../../core/utils/app_colors.dart';
+import '../../../core/widgets/bottom_nav_bar.dart';
+import '../../../login/presentation/widgets/login_appbar_widget.dart';
+import '../manager/recipe_detail_view_model.dart';
+import '../widgets/details_widget.dart';
+import '../widgets/food_widget.dart';
+import '../widgets/recipe_detail_main_text.dart';
+import '../widgets/recipe_detail_user_widget.dart';
 
 class RecipeDetailPage extends StatelessWidget {
   const RecipeDetailPage({super.key});

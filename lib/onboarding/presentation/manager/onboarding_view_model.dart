@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:new_recipe_app/onboarding/data/models/onboarding_model.dart';
-import 'package:new_recipe_app/onboarding/data/repositories/onboarding_repository.dart';
+import '../../data/models/onboarding_model.dart';
+import '../../data/repositories/onboarding_repository.dart';
 
 class OnBoardingViewModel extends ChangeNotifier {
   OnBoardingViewModel({required OnBoardingRepository repo}) : _repo = repo {

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:new_recipe_app/profile/data/models/profile_model.dart';
-import 'package:new_recipe_app/profile/data/models/recipes_model.dart';
-import 'package:new_recipe_app/profile/data/repositories/profile_repository.dart';
-import 'package:new_recipe_app/profile/data/repositories/recipes_repository.dart';
+
+
+import '../../data/models/profile_model.dart';
+import '../../data/models/recipes_model.dart';
+import '../../data/repositories/profile_repository.dart';
+import '../../data/repositories/recipes_repository.dart';
 
 class ProfileViewModel extends ChangeNotifier {
   ProfileViewModel({required this.recipeRepo, required this.profileRepo}) {
