@@ -3,21 +3,33 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../core/utils/app_colors.dart';
 
-class RecipeRating extends StatelessWidget {
-  const RecipeRating({
-    super.key, required this.rating,  this.color=AppColors.pinkSub,
-
+class CommunityTime extends StatelessWidget {
+  const CommunityTime({
+    super.key,
+    required this.time,
+    this.color=AppColors.pinkSub
   });
 
-  final num rating;
+  final num time;
+
   final Color color;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
+        SvgPicture.asset(
+          "assets/icons/clock.svg",
+          width: 10,
+          height: 10,
+          fit: BoxFit.cover,
+          colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
+        ),
+        SizedBox(
+          width: 3,
+        ),
         Text(
-          "$rating",
+          "$time min",
           style: TextStyle(
             color: color,
             fontFamily: "Poppins",
@@ -25,16 +37,6 @@ class RecipeRating extends StatelessWidget {
             fontSize: 12,
           ),
         ),
-        SizedBox(
-          width: 3,
-        ),
-        SvgPicture.asset(
-          "assets/svg/star.svg",
-          width: 10,
-          height: 10,
-          fit: BoxFit.cover,
-          colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
-        )
       ],
     );
   }

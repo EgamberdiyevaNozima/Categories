@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:recipe_app_project1/category_detail/data/models/recipe_model.dart';
 import '../../../category_detail/presentation/widgets/recipe_rating.dart';
 import '../../../category_detail/presentation/widgets/recipe_time.dart';
 import '../../../core/utils/app_colors.dart';
+import 'home_page_view_model.dart';
 
 class TrendingRecipeWidget extends StatelessWidget {
   const TrendingRecipeWidget({
-    super.key,
+    super.key,required this.recipe
   });
-
+ final RecipeModel recipe;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -30,7 +32,7 @@ class TrendingRecipeWidget extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(14),
                 child: Image(
-                  image: AssetImage('assets/images/seafood.png'),
+                  image: NetworkImage(recipe.photo),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -77,8 +79,8 @@ class TrendingRecipeWidget extends StatelessWidget {
                         ),
                         RecipeRating(
                           rating: 5,
-                          svgColor: AppColors.pinkSub,
-                          textColor: AppColors.pinkSub,
+                          // svgColor: AppColors.pinkSub,
+                          // textColor: AppColors.pinkSub,
                         ),
                       ],
                     ),

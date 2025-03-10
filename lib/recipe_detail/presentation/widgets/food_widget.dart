@@ -56,8 +56,8 @@ class FoodWidget extends StatelessWidget {
                       children: [
                         RecipeRating(
                           rating: vm.recipe.rating,
-                          textColor: AppColors.milkWhite,
-                          svgColor: AppColors.milkWhite,
+                          // textColor: AppColors.milkWhite,
+                          // svgColor: AppColors.milkWhite,
                         ),
                         Row(
                           spacing: 5,

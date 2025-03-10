@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../login/presentation/widgets/login_appbar_widget.dart';
 import '../manager/categories_view_model.dart';
 import '../widgets/category_item.dart';
+
 class CategoriesPage extends StatelessWidget {
   const CategoriesPage({super.key, required this.cvm});
 
@@ -19,6 +20,7 @@ class CategoriesPage extends StatelessWidget {
             leading: "assets/icons/back-arrow.svg",
             firstAction: "assets/icons/notification.svg",
             secondAction: 'assets/icons/search.svg',
+            leadingCallBack: () {},
           ),
           body: ListView(
             children: [

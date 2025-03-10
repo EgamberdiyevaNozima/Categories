@@ -13,7 +13,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
     required this.firstAction,
     required this.secondAction,
     this.bottom,
-    this.toolbarHeight = 72,
+    this.toolbarHeight = 72, required this.leadingCallBack,
   });
 
   final String title;
@@ -22,6 +22,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final String secondAction;
   final double toolbarHeight;
   final PreferredSizeWidget? bottom;
+  final VoidCallback leadingCallBack;
 
   @override
   Size get preferredSize {
@@ -40,7 +41,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
         backgroundColor: AppColors.beigeColor,
         centerTitle: true,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: leadingCallBack,
           icon: SvgPicture.asset(leading),
         ),
         title: Text(

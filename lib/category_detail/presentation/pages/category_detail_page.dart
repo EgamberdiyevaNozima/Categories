@@ -28,7 +28,7 @@ class CategoryDetailPage extends StatelessWidget {
               leading: "assets/icons/back-arrow.svg",
               firstAction: "assets/icons/notification.svg",
               secondAction: "assets/icons/search.svg",
-              bottom: RecipeAppBarBottom(vm: vm),
+              bottom: RecipeAppBarBottom(vm: vm), leadingCallBack: () {  },
             ),
             body: GridView.builder(
               padding:

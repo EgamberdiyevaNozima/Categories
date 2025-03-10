@@ -3,11 +3,12 @@ import 'package:go_router/go_router.dart';
 import 'package:recipe_app_project1/core/routing/routes.dart';
 import 'package:recipe_app_project1/core/secure_storage.dart';
 
+import '../community/data/models/community_model.dart';
 import '../login/data/model/user_model.dart';
 import '../main.dart';
 
 class ApiClient {
-  final Dio dio = Dio(BaseOptions(baseUrl: "http://10.10.0.9:8888/api/v1"));
+  final Dio dio = Dio(BaseOptions(baseUrl: "http://10.10.3.227:8888/api/v1"));
 
   Future<Map<String, dynamic>> fetchMyProfile() async {
     try {
@@ -66,7 +67,7 @@ class ApiClient {
     }
   }
 
-  Future<dynamic> fetchRecipeTrendingRecipes() async {
+  Future<dynamic> fetchRecipeTrendingRecipe() async {
     var response = await dio.get('/recipes/trending-recipe');
     if (response.statusCode == 200) {
       return response.data;
@@ -102,7 +103,7 @@ class ApiClient {
   Future<bool> signUp(UserModel model) async {
     var response = await dio.post(
       '/auth/register',
-      data: model.toJson(),
+      // data: model.toJson(),
     );
     if (response.statusCode == 201) {
       return true;
@@ -141,4 +142,35 @@ class ApiClient {
     }
   }
 
+  Future<List< dynamic>> fetchCommunity() async {
+    var response  = await dio.get('/recipes/list?Limit=2');
+
+    if (response.statusCode == 200) {
+      List< dynamic> data =response.data;
+      return data;
+    } else {
+      throw Exception("/recipes/list?Limit=2 sorovi xato ketayabdi");
+    }
+  }
+
+  // Future<List<dynamic>> fetchCommunityRecipes(
+  //     int? limit, {
+  //       required String order,
+  //       bool descending = true,
+  //     }) async {
+  //   var response = await dio.get(
+  //       "/recipes/community/list?Limit=${limit ?? ""}&Order=$order&Descending=$descending");
+  //   List<dynamic> data = response.data;
+  //   return data;
+  // }
+  Future<List<dynamic>> fetchCommunityRecipes(
+      int? limit, {
+        required String order,
+        bool descending = true,
+      }) async {
+    var response = await dio.get(
+        "/recipes/community/list?Limit=${limit ?? ""}&Order=$order&Descending=$descending");
+    List<dynamic> data = response.data;
+    return data;
+  }
 }

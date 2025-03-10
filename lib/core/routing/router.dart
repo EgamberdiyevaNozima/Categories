@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:recipe_app_project1/core/routing/routes.dart';
+import 'package:recipe_app_project1/home/presentation/pages/home_page_view_model.dart';
 import '../../categories/data/repositories/category_repository.dart';
 import '../../categories/presentation/manager/categories_view_model.dart';
 import '../../categories/presentation/pages/categories_page.dart';
 import '../../category_detail/data/repositories/recipe_repoitory.dart';
 import '../../category_detail/presentation/manager/category_detail_view_model.dart';
 import '../../category_detail/presentation/pages/category_detail_page.dart';
+import '../../community/presentation/manager/community_view_model.dart';
+import '../../community/presentation/pages/community_view.dart';
 import '../../home/presentation/pages/home_page.dart';
 import '../../login/data/repositories/auth_repository.dart';
 import '../../login/presentation/manager/login_view_model.dart';
@@ -30,22 +33,29 @@ final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 final GoRouter router = GoRouter(
   navigatorKey: navigatorKey,
-  initialLocation: Routes.home,
+  initialLocation: Routes.community,
   // '/recipe-detail/1'
   routes: [
     GoRoute(
       path: Routes.home,
-      builder: (context, state) => HomePage(),
+      builder: (context, state) => ChangeNotifierProvider(
+        create: (context) =>
+            HomePageViewModel(repo: context.read(), recipeRepo: context.read()),
+        child: HomePage(),
+      ),
     ),
     GoRoute(
-      path: Routes.recipe_detail,
-      builder: (context, state) => ChangeNotifierProvider(
-        create: (context) => RecipeDetailViewModel(
-          recipeRepo: context.read(),
-          recipeId: int.parse(state.pathParameters['recipeId']!),
-        ),
-        child: RecipeDetailPage(),
-      ),
+      path: '${Routes.recipe_detail}/:recipeId',
+      builder: (context, state) {
+        final int recipeId = int.parse(state.pathParameters['recipeId']!);
+        return ChangeNotifierProvider(
+          create: (context) => RecipeDetailViewModel(
+            recipeRepo: context.read(),
+            recipeId: recipeId,
+          ),
+          child: RecipeDetailPage(recipeId: recipeId),
+        );
+      },
     ),
     GoRoute(
       path: Routes.category_detail,
@@ -121,7 +131,17 @@ final GoRouter router = GoRouter(
       ),
     ),
     GoRoute(
-        path: Routes.register_profile,
-        builder: (context, state) => RegisterProfile()),
+      path: Routes.register_profile,
+      builder: (context, state) => RegisterProfile(),
+    ),
+    GoRoute(
+      path: Routes.community,
+      builder: (context, state) => ChangeNotifierProvider(
+        create: (context) => CommunityTopViewModel(
+          repo: context.read(),
+        )..load(index: context.read<CommunityTopViewModel>().index),
+        child: CommunityTopView(),
+      ),
+    )
   ],
 );

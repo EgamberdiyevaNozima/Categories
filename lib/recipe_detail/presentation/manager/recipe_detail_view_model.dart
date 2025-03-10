@@ -40,7 +40,7 @@ class RecipeDetailViewModel extends ChangeNotifier {
         children: [
           SizedBox(height: 11),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 7, vertical: 10),
+            padding: EdgeInsets.symmetric(horizontal: 4, vertical: 10),
             height: 81,
             width: double.infinity,
             decoration: BoxDecoration(
