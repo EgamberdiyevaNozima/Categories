@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # recipe_app_project1
+=======
+# profile
+>>>>>>> origin/main
 
 A new Flutter project.
 

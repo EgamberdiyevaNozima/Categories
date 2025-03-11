@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
     "name": "main_recipe",
     "short_name": "main_recipe",
+=======
+    "name": "profile",
+    "short_name": "profile",
+>>>>>>> origin/main
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

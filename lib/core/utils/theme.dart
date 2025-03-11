@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'app_colors.dart';
 
 final ThemeData darkTheme = ThemeData(
@@ -7,6 +8,18 @@ final ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
     primary: AppColors.redPinkMain,
     onPrimary: AppColors.milkWhite,
+=======
+
+import 'colors.dart';
+
+final ThemeData appThemeData = ThemeData(
+  scaffoldBackgroundColor: AppColors.beigeColor,
+  fontFamily: 'Poppins',
+  colorScheme: ColorScheme(
+    brightness: Brightness.dark,
+    primary: AppColors.redPinkMain,
+    onPrimary: Colors.white,
+>>>>>>> origin/main
     secondary: AppColors.pink,
     onSecondary: AppColors.pinkSub,
     error: Colors.red,
@@ -14,6 +27,7 @@ final ThemeData darkTheme = ThemeData(
     surface: AppColors.beigeColor,
     onSurface: Colors.white,
   ),
+<<<<<<< HEAD
 );
 
 class AppThemes {
@@ -30,3 +44,10 @@ class AppThemes {
     colorScheme: AppColors.lightColorScheme,
   );
 }
+=======
+  appBarTheme: AppBarTheme(
+    backgroundColor: AppColors.beigeColor,
+    surfaceTintColor: Colors.transparent,
+  ),
+);
+>>>>>>> origin/main

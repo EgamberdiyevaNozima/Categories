@@ -1,5 +1,6 @@
 class ProfileModel {
   final int id;
+<<<<<<< HEAD
   final String username;
   final String fullName;
   final String bio;
@@ -7,6 +8,11 @@ class ProfileModel {
   final int recipeCount;
   final int followingCount;
   final int followerCount;
+=======
+  final String username, fullName, bio;
+  final String image;
+  final int recipeCount, followingCount, followerCount;
+>>>>>>> origin/main
 
   ProfileModel({
     required this.id,

@@ -1,0 +1,2 @@
+C:/Users/Acer/StudioProjects/recipe_page_po/android/app/.cxx/Debug/3g2t1x1c/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/Acer/StudioProjects/recipe_page_po/android/app/.cxx/Debug/3g2t1x1c/x86_64/CMakeFiles/rebuild_cache.dir

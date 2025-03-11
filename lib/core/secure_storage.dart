@@ -1,4 +1,5 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+<<<<<<< HEAD
 class SecureStorage {
   static const String tokenKey = "jwt_token";
   static const String loginKey = "login";
@@ -6,6 +7,20 @@ class SecureStorage {
   static final _storage = FlutterSecureStorage();
 
   static Future<void> SaveCredentials(String login, String password) async {
+=======
+
+class SecureStorage {
+  static const String tokenKey = 'jwt_token';
+  static const String loginKey = 'login';
+  static const String passwordKey = 'password';
+  static const _storage = FlutterSecureStorage();
+
+  static Future<void> saveToken(String token) async {
+    await _storage.write(key: tokenKey, value: token);
+  }
+
+  static Future<void> saveCredentials(String login, String password) async {
+>>>>>>> origin/main
     await _storage.write(key: loginKey, value: login);
     await _storage.write(key: passwordKey, value: password);
   }
@@ -30,8 +45,11 @@ class SecureStorage {
     await _storage.delete(key: loginKey);
     await _storage.delete(key: passwordKey);
   }
+<<<<<<< HEAD
 
   static Future<void> saveToken(String token) async {
     await _storage.write(key: tokenKey, value: token);
   }
+=======
+>>>>>>> origin/main
 }

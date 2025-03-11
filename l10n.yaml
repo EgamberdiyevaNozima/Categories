@@ -3,4 +3,9 @@ output-dir: lib\core\l10n
 output-class: MyLocalizations
 template-arb-file: app_uz.arb
 synthetic-package: false
+<<<<<<< HEAD
 output-localization-file: app_localizations.dart
+=======
+output-localization-file: app_localizations.dart
+untranslated-messages-file: desiredFileName.txt
+>>>>>>> origin/main
